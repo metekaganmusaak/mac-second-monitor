@@ -22,6 +22,9 @@
     <string name="stream_connecting">正在连接到 %1$s…</string>
     <string name="stream_starting">正在启动显示屏…</string>
     <string name="stream_reconnecting">连接已断开，正在重新连接…</string>
+    <string name="stream_mac_closed">Mac 上的 Mac Second Monitor 已关闭</string>
+    <string name="stream_connection_lost">与 Mac 的连接已断开</string>
+    <string name="stream_waiting_detail">Mac Second Monitor 重新运行后会自动重新连接。</string>
     <string name="stream_disconnected">已断开连接</string>
     <string name="stream_mac">Mac</string>
     <string name="stream_usb">USB</string>

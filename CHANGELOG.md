@@ -4,6 +4,16 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses
 [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Fixed
+- When the Mac app quits, devices no longer retry in a loop: the Mac says goodbye before it exits,
+  and the Android app shows "Mac Second Monitor was closed on the Mac" and reconnects by itself as
+  soon as the app is running again (also after a crash or a dropped link, after three quick
+  retries). iOS and the browser client stop instead of retrying.
+- The Mac app is now called **Mac Second Monitor** everywhere (app bundle, process name, privacy
+  settings); the browser client's home-screen name too.
+
 ## [0.1.0] — 2026-10-20
 
 First public preview. Every phase of the [roadmap](docs/ROADMAP.md) has a working
@@ -71,4 +81,5 @@ APK for one-click install) and `MacSecondMonitor-0.1.0.apk` (Android 8+ / Harmon
 - The iOS app is not on the App Store; build it with Xcode.
 - Rotating an Android device while streaming isn't supported (the orientation is locked).
 
+[Unreleased]: https://github.com/metekaganmusaak/mac-second-monitor/compare/v0.1.0...HEAD
 [0.1.0]: https://github.com/metekaganmusaak/mac-second-monitor/releases/tag/v0.1.0

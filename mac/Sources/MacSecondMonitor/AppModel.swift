@@ -81,10 +81,12 @@ final class AppModel: ObservableObject {
         }
     }
 
+    /// Called when the app quits: waits briefly so connected devices learn the Mac app closed
+    /// (and wait for it) instead of treating it as a dropped connection.
     func stop() {
         adb.stop()
         usbmux.stop()
-        engine.stop()
+        engine.stop(waitingUpTo: 0.5)
     }
 
     func disconnect(_ session: SessionSnapshot) {

@@ -22,6 +22,9 @@
     <string name="stream_connecting">Verbindung mit %1$s wird hergestellt…</string>
     <string name="stream_starting">Display wird gestartet…</string>
     <string name="stream_reconnecting">Verbindung unterbrochen. Neuer Verbindungsversuch…</string>
+    <string name="stream_mac_closed">Mac Second Monitor wurde auf dem Mac beendet</string>
+    <string name="stream_connection_lost">Verbindung zum Mac unterbrochen</string>
+    <string name="stream_waiting_detail">Die Verbindung wird automatisch wiederhergestellt, sobald Mac Second Monitor wieder läuft.</string>
     <string name="stream_disconnected">Verbindung getrennt</string>
     <!-- Used inside stream_connecting ("Verbindung mit deinem Mac …"), hence the dative. -->
     <string name="stream_mac">deinem Mac</string>

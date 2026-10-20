@@ -1,5 +1,5 @@
 #!/bin/bash
-# Builds build/MacSecondMonitor.app (and optionally a DMG).
+# Builds "build/Mac Second Monitor.app" (and optionally a DMG).
 #
 #   scripts/build-app.sh            release build, signed with the first "Apple Development"
 #                                   or "Developer ID Application" identity (ad-hoc otherwise)
@@ -16,7 +16,8 @@ ROOT="$(cd .. && pwd)"
 CONFIG="${CONFIG:-release}"
 VERSION="${VERSION:-0.1.0}"
 BUILD="${BUILD:-1}"
-APP="build/MacSecondMonitor.app"
+# The bundle and its executable carry the product name (Finder, Activity Monitor, privacy settings).
+APP="build/Mac Second Monitor.app"
 
 echo "==> Building ($CONFIG)"
 swift build -c "$CONFIG" --product MacSecondMonitor
@@ -25,7 +26,7 @@ BIN="$(swift build -c "$CONFIG" --show-bin-path)"
 echo "==> Assembling $APP"
 rm -rf "$APP"
 mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
-cp "$BIN/MacSecondMonitor" "$APP/Contents/MacOS/"
+cp "$BIN/MacSecondMonitor" "$APP/Contents/MacOS/Mac Second Monitor"
 sed -e "s/__VERSION__/$VERSION/" -e "s/__BUILD__/$BUILD/" Resources/Info.plist > "$APP/Contents/Info.plist"
 cp Resources/AppIcon.icns "$APP/Contents/Resources/"
 

@@ -22,6 +22,9 @@
     <string name="stream_connecting">%1$s に接続しています…</string>
     <string name="stream_starting">ディスプレイを起動しています…</string>
     <string name="stream_reconnecting">接続が切断されました。再接続しています…</string>
+    <string name="stream_mac_closed">Mac で Mac Second Monitor が終了しました</string>
+    <string name="stream_connection_lost">Mac との接続が切れました</string>
+    <string name="stream_waiting_detail">Mac Second Monitor が再び起動すると、自動的に再接続します。</string>
     <string name="stream_disconnected">切断されました</string>
     <string name="stream_mac">Mac</string>
     <string name="stream_usb">USB</string>

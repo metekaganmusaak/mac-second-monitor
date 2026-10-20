@@ -244,7 +244,8 @@ export class App {
         break;
       }
       case 'bye':
-        if (reason.reason === 'user') this.stopped(t('status.disconnected.host'));
+        // "shutdown": the Mac app quit; retrying in a loop can't bring it back.
+        if (reason.reason === 'user' || reason.reason === 'shutdown') this.stopped(t('status.disconnected.host'));
         else if (reason.reason === 'replaced') this.stopped(t('status.disconnected.replaced'));
         else this.scheduleReconnect();
         break;

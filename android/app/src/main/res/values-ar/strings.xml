@@ -26,6 +26,9 @@
     <string name="stream_connecting">جارٍ الاتصال بـ \u2068%1$s\u2069…</string>
     <string name="stream_starting">جارٍ تشغيل الشاشة…</string>
     <string name="stream_reconnecting">انقطع الاتصال. جارٍ إعادة الاتصال…</string>
+    <string name="stream_mac_closed">تم إغلاق Mac Second Monitor على جهاز Mac</string>
+    <string name="stream_connection_lost">انقطع الاتصال بجهاز Mac</string>
+    <string name="stream_waiting_detail">سيُعاد الاتصال تلقائيًا بمجرد تشغيل Mac Second Monitor مرة أخرى.</string>
     <string name="stream_disconnected">تم قطع الاتصال</string>
     <string name="stream_mac">Mac</string>
     <string name="stream_usb">USB</string>

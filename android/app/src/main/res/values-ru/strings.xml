@@ -22,6 +22,9 @@
     <string name="stream_connecting">Подключение к %1$s…</string>
     <string name="stream_starting">Запуск дисплея…</string>
     <string name="stream_reconnecting">Соединение потеряно. Повторное подключение…</string>
+    <string name="stream_mac_closed">Mac Second Monitor закрыт на Mac</string>
+    <string name="stream_connection_lost">Соединение с Mac потеряно</string>
+    <string name="stream_waiting_detail">Подключение восстановится автоматически, как только Mac Second Monitor снова будет запущен.</string>
     <string name="stream_disconnected">Отключено</string>
     <!-- Used inside stream_connecting ("Подключение к вашему Mac…"), hence the dative. -->
     <string name="stream_mac">вашему Mac</string>

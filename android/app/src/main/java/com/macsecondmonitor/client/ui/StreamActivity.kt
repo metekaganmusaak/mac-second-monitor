@@ -25,6 +25,7 @@ import android.widget.FrameLayout
 import android.widget.PopupMenu
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
+import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
@@ -51,7 +52,13 @@ import com.macsecondmonitor.client.protocol.StreamConfig
 import com.macsecondmonitor.client.protocol.VideoFrame
 import com.macsecondmonitor.client.protocol.Welcome
 import com.macsecondmonitor.client.video.VideoDecoder
+import java.io.IOException
+import java.net.InetSocketAddress
+import java.net.Socket
 import java.util.Locale
+import java.util.concurrent.Executors
+import java.util.concurrent.ScheduledExecutorService
+import java.util.concurrent.TimeUnit
 
 /** Full-screen display: decodes the host's stream and sends touch / keyboard input back. */
 class StreamActivity : AppCompatActivity(), VideoDecoder.Listener, SurfaceHolder.Callback {
@@ -83,6 +90,10 @@ class StreamActivity : AppCompatActivity(), VideoDecoder.Listener, SurfaceHolder
 
     private var streaming = false
     private var reconnectAttempts = 0
+    /** A session reached WELCOME at least once, so drops are worth recovering from. */
+    private var everConnected = false
+    /** Polls until the Mac app is reachable again, then reconnects. */
+    private var hostWatcher: ScheduledExecutorService? = null
     private var leaving = false
     private var backgroundedAt = 0L
 
@@ -161,9 +172,16 @@ class StreamActivity : AppCompatActivity(), VideoDecoder.Listener, SurfaceHolder
         main.postDelayed(backgroundTimeout, BACKGROUND_TIMEOUT_MS)
     }
 
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        // The Mac launched us again over adb (its app was restarted): reconnect right away.
+        if (intent.getBooleanExtra(EXTRA_RECONNECT, false) && isUsb && !streaming && !leaving) connect()
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         isActive = false
+        stopWatchingHost()
         main.removeCallbacksAndMessages(null)
         leaving = true
         connection?.close()
@@ -193,6 +211,7 @@ class StreamActivity : AppCompatActivity(), VideoDecoder.Listener, SurfaceHolder
     // MARK: Connection
 
     private fun connect() {
+        stopWatchingHost()
         connection?.close()
         streaming = false
         firstFrameShown = false
@@ -246,6 +265,7 @@ class StreamActivity : AppCompatActivity(), VideoDecoder.Listener, SurfaceHolder
 
     private fun handleWelcome(welcome: Welcome) {
         reconnectAttempts = 0
+        everConnected = true
         hostName = welcome.hostName
         welcome.token?.let { settings.saveToken(welcome.hostName, host, it) }
         if (!isUsb) settings.rememberHost(welcome.hostName, host, port)
@@ -260,18 +280,21 @@ class StreamActivity : AppCompatActivity(), VideoDecoder.Listener, SurfaceHolder
         if (leaving) return
         when (reason) {
             CloseReason.User -> Unit
-            // A display that worked before (e.g. lost while the Mac slept) is worth retrying.
-            is CloseReason.Host -> if (reason.error.code == "display_unavailable" && firstFrameShown) {
-                scheduleReconnect()
+            // A display that worked before (e.g. lost while the Mac slept) is worth waiting for.
+            is CloseReason.Host -> if (reason.error.code == "display_unavailable" && everConnected) {
+                waitForHost(R.string.stream_connection_lost)
             } else {
                 showError(errorMessage(reason.error))
             }
             is CloseReason.Bye -> when (reason.reason) {
                 "replaced" -> showError(getString(R.string.error_replaced))
                 "user" -> leave()
+                // The Mac app quit: wait quietly instead of hammering it with reconnects.
+                "shutdown" -> waitForHost(R.string.stream_mac_closed)
+                // e.g. "reconfigure": the Mac wants a fresh session right away.
                 else -> scheduleReconnect()
             }
-            is CloseReason.Network -> if (reconnectAttempts == 0 && !firstFrameShown) {
+            is CloseReason.Network -> if (!everConnected) {
                 // Never connected: report instead of retrying silently.
                 showError(getString(R.string.error_network, reason.message))
             } else {
@@ -280,14 +303,44 @@ class StreamActivity : AppCompatActivity(), VideoDecoder.Listener, SurfaceHolder
         }
     }
 
+    /** A few quick retries cover short drops; after that, wait for the Mac to come back. */
     private fun scheduleReconnect() {
-        if (reconnectAttempts >= MAX_RECONNECT_ATTEMPTS) {
-            showError(getString(R.string.stream_disconnected))
+        if (reconnectAttempts >= QUICK_RECONNECT_ATTEMPTS) {
+            waitForHost(R.string.stream_connection_lost)
             return
         }
         reconnectAttempts++
         showStatus(getString(R.string.stream_reconnecting), progress = true)
-        main.postDelayed({ if (!leaving) connect() }, minOf(500L * reconnectAttempts, 3000L))
+        main.postDelayed({ if (!leaving) connect() }, 600L * reconnectAttempts)
+    }
+
+    /**
+     * Shows a calm "waiting for the Mac" screen and reconnects by itself once Mac Second Monitor
+     * is reachable again (over USB the Mac also relaunches us, see [onNewIntent]).
+     */
+    private fun waitForHost(@StringRes title: Int) {
+        reconnectAttempts = 0
+        releaseWifiLock()
+        showStatus(getString(title), progress = true, detail = getString(R.string.stream_waiting_detail), buttons = true)
+        stopWatchingHost()
+        val watcher = Executors.newSingleThreadScheduledExecutor { Thread(it, "msm-host-watch").apply { isDaemon = true } }
+        watcher.scheduleWithFixedDelay({
+            val reachable = if (isUsb) UsbTunnel.isHostReachable(port) else isReachable(host, port)
+            if (reachable) runOnUiThread { if (hostWatcher === watcher && !leaving) connect() }
+        }, WATCH_INTERVAL_MS, WATCH_INTERVAL_MS, TimeUnit.MILLISECONDS)
+        hostWatcher = watcher
+    }
+
+    private fun stopWatchingHost() {
+        hostWatcher?.shutdownNow()
+        hostWatcher = null
+    }
+
+    private fun isReachable(host: String, port: Int): Boolean = try {
+        Socket().use { it.connect(InetSocketAddress(host, port), 800) }
+        true
+    } catch (_: IOException) {
+        false
     }
 
     override fun onKeyframeNeeded() {
@@ -440,6 +493,7 @@ class StreamActivity : AppCompatActivity(), VideoDecoder.Listener, SurfaceHolder
 
     private fun leave() {
         leaving = true
+        stopWatchingHost()
         connection?.close()
         connection = null
         finish()
@@ -505,7 +559,9 @@ class StreamActivity : AppCompatActivity(), VideoDecoder.Listener, SurfaceHolder
         private const val EXTRA_HOST = "host"
         private const val EXTRA_PORT = "port"
         private const val EXTRA_NAME = "name"
-        private const val MAX_RECONNECT_ATTEMPTS = 30
+        private const val EXTRA_RECONNECT = "reconnect"
+        private const val QUICK_RECONNECT_ATTEMPTS = 3
+        private const val WATCH_INTERVAL_MS = 2000L
         private const val BACKGROUND_TIMEOUT_MS = 5 * 60 * 1000L
         private const val MENU_KEYBOARD = 1
         private const val MENU_STATS = 2
@@ -519,5 +575,11 @@ class StreamActivity : AppCompatActivity(), VideoDecoder.Listener, SurfaceHolder
                 .putExtra(EXTRA_HOST, host)
                 .putExtra(EXTRA_PORT, port)
                 .putExtra(EXTRA_NAME, name)
+
+        /** Brings the running stream to the front and asks it to reconnect if it is waiting. */
+        fun reconnectIntent(context: Context): Intent =
+            Intent(context, StreamActivity::class.java)
+                .putExtra(EXTRA_RECONNECT, true)
+                .addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
     }
 }

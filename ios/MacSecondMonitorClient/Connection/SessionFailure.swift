@@ -52,7 +52,9 @@ enum CloseOutcome: Equatable {
             self = .quiet
         case let .host(code, message):
             self = .fail(.host(code: code, message: message))
-        case .closedByHost(reason: "user"):
+        case .closedByHost(reason: "user"), .closedByHost(reason: "shutdown"):
+            // "shutdown": the Mac app quit. Over USB it dials back once it is reopened; there is
+            // nothing to gain from retrying in a loop.
             self = .fail(.endedOnMac)
         case .closedByHost(reason: "replaced"):
             self = .fail(.replaced)

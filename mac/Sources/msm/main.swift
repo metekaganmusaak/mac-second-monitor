@@ -169,8 +169,8 @@ enum Serve {
             printLine("\nStopping…")
             bridge?.stop()
             usbmux?.stop()
-            engine.stop()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { exit(0) }
+            engine.stop(waitingUpTo: 0.5)
+            exit(0)
         }
         interrupt.resume()
         withExtendedLifetime((engine, printer, bridge, usbmux, interrupt)) {

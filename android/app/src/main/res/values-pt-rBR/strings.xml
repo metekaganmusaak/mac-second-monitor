@@ -22,6 +22,9 @@
     <string name="stream_connecting">Conectando a %1$s…</string>
     <string name="stream_starting">Iniciando a tela…</string>
     <string name="stream_reconnecting">Conexão perdida. Reconectando…</string>
+    <string name="stream_mac_closed">O Mac Second Monitor foi fechado no Mac</string>
+    <string name="stream_connection_lost">A conexão com o Mac foi perdida</string>
+    <string name="stream_waiting_detail">A conexão volta automaticamente assim que o Mac Second Monitor for aberto de novo.</string>
     <string name="stream_disconnected">Desconectado</string>
     <string name="stream_mac">seu Mac</string>
     <string name="stream_usb">USB</string>

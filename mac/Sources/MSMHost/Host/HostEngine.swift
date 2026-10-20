@@ -106,7 +106,10 @@ public final class HostEngine: @unchecked Sendable {
         }
     }
 
-    public func stop() {
+    /// Tells every client the host is going away (BYE `shutdown`) and stops listening.
+    /// - Parameter timeout: how long to block until the BYEs are out. Pass a short timeout when
+    ///   the process is about to exit, so clients don't mistake the exit for a network drop.
+    public func stop(waitingUpTo timeout: TimeInterval = 0) {
         nativeListener?.stop()
         webServer?.stop()
         nativeListener = nil
@@ -115,8 +118,13 @@ public final class HostEngine: @unchecked Sendable {
             _nativeStatus = .stopped
             _webStatus = .stopped
         }
+        let group = DispatchGroup()
         for session in lock.withLock({ Array(sessions.values) }) {
-            session.disconnect(reason: "shutdown")
+            group.enter()
+            session.disconnect(reason: "shutdown") { group.leave() }
+        }
+        if timeout > 0 {
+            _ = group.wait(timeout: .now() + timeout)
         }
         notify()
     }

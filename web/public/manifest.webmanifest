@@ -1,6 +1,6 @@
 {
   "name": "Mac Second Monitor",
-  "short_name": "Second Monitor",
+  "short_name": "Mac Second Monitor",
   "start_url": "./",
   "scope": "./",
   "display": "fullscreen",

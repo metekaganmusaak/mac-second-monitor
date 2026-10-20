@@ -16,7 +16,9 @@ class UsbConnectActivity : Activity() {
         // Only adb (the Mac) knows this secret; it proves to the Mac that the connection through
         // the tunnel comes from this app and not from another app on the device.
         intent.getStringExtra(EXTRA_SECRET)?.takeIf { it.length >= 32 }?.let { AppSettings(this).saveUsbSecret(it) }
-        if (!StreamActivity.isActive) {
+        if (StreamActivity.isActive) {
+            startActivity(StreamActivity.reconnectIntent(this))
+        } else {
             startActivity(StreamActivity.intent(this, UsbTunnel.HOST, ProtocolInfo.NATIVE_PORT, null))
         }
         finish()

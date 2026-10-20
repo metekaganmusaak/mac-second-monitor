@@ -19,9 +19,9 @@ clients over USB or the network. It also contains the shared Swift protocol and 
 cd mac
 swift build                         # everything
 swift test                          # unit tests (protocol, host, client kit)
-scripts/build-app.sh                # build/MacSecondMonitor.app (release, signed)
+scripts/build-app.sh                # "build/Mac Second Monitor.app" (release, signed)
 DMG=1 scripts/build-app.sh          # also build/MacSecondMonitor-<version>.dmg
-open build/MacSecondMonitor.app
+open "build/Mac Second Monitor.app"
 ```
 
 `build-app.sh` signs with the first *Apple Development* or *Developer ID Application* identity in

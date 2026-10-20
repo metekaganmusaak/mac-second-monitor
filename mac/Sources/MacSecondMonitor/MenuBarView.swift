@@ -199,7 +199,7 @@ struct MenuBarView: View {
     private var footer: some View {
         HStack {
             Button(L10n.tr("menu.quit")) {
-                model.stop()
+                // applicationWillTerminate says goodbye to connected devices.
                 NSApp.terminate(nil)
             }
             .keyboardShortcut("q")

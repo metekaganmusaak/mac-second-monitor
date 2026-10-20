@@ -22,6 +22,9 @@
     <string name="stream_connecting">Connessione con %1$s…</string>
     <string name="stream_starting">Avvio dello schermo…</string>
     <string name="stream_reconnecting">Connessione persa. Riconnessione…</string>
+    <string name="stream_mac_closed">Mac Second Monitor è stato chiuso sul Mac</string>
+    <string name="stream_connection_lost">Connessione al Mac persa</string>
+    <string name="stream_waiting_detail">Si riconnetterà automaticamente non appena Mac Second Monitor sarà di nuovo aperto.</string>
     <string name="stream_disconnected">Disconnesso</string>
     <string name="stream_mac">il tuo Mac</string>
     <string name="stream_usb">USB</string>

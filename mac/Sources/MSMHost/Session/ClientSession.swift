@@ -107,12 +107,18 @@ final class ClientSession: @unchecked Sendable {
     }
 
     /// Ends the session from the host side (user action, replacement or shutdown).
-    func disconnect(reason: String) {
+    /// `completion` runs once BYE has been handed to the network stack (or right away if the
+    /// session was already closed).
+    func disconnect(reason: String, completion: (@Sendable () -> Void)? = nil) {
         queue.async { [self] in
-            guard !closed else { return }
+            guard !closed else {
+                completion?()
+                return
+            }
             // Close only after BYE is out, so the client knows whether to reconnect.
             channel.send(.json(.bye, Bye(reason: reason))) { [channel] in
                 channel.close(reason: reason)
+                completion?()
             }
             finish()
         }

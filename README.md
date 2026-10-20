@@ -101,9 +101,9 @@ and drag **Mac Second Monitor** into **Applications**.
 ```bash
 git clone https://github.com/metekaganmusaak/mac-second-monitor.git
 cd mac-second-monitor/mac
-scripts/build-app.sh                  # creates build/MacSecondMonitor.app
-cp -R build/MacSecondMonitor.app /Applications/
-open /Applications/MacSecondMonitor.app
+scripts/build-app.sh                  # creates "build/Mac Second Monitor.app"
+cp -R "build/Mac Second Monitor.app" /Applications/
+open "/Applications/Mac Second Monitor.app"
 ```
 
 Mac Second Monitor lives in the **menu bar** (two overlapping rectangles); it has no Dock icon.

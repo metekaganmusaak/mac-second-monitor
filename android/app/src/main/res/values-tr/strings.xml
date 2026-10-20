@@ -22,6 +22,9 @@
     <string name="stream_connecting">%1$s cihazına bağlanılıyor…</string>
     <string name="stream_starting">Ekran başlatılıyor…</string>
     <string name="stream_reconnecting">Bağlantı koptu. Yeniden bağlanılıyor…</string>
+    <string name="stream_mac_closed">Mac’te Mac Second Monitor kapatıldı</string>
+    <string name="stream_connection_lost">Mac ile bağlantı koptu</string>
+    <string name="stream_waiting_detail">Mac Second Monitor yeniden açıldığında kendiliğinden bağlanır.</string>
     <string name="stream_disconnected">Bağlantı kesildi</string>
     <string name="stream_mac">Mac’iniz</string>
     <string name="stream_usb">USB</string>
