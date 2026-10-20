@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Connect screen -->
+    <string name="connect_subtitle">Bu cihazı Mac’iniz için ekran olarak kullanın.</string>
+    <string name="connect_settings">Ayarlar</string>
+    <string name="connect_usb_title">USB kablosu</string>
+    <string name="connect_usb_searching">Mac’iniz USB üzerinden aranıyor…</string>
+    <string name="connect_usb_ready">Mac USB üzerinden bulundu. En düşük gecikme.</string>
+    <string name="connect_usb_absent">Kabloyu takın ve Mac’te Mac Second Monitor’ü açın.</string>
+    <string name="connect_usb_help">USB nasıl kurulur</string>
+    <string name="connect_usb_help_body">1. Bu cihazda Ayarlar → Telefon/Tablet hakkında bölümünü açın ve Geliştirici seçeneklerini açmak için “Yapım numarası”na yedi kez dokunun.\n2. Ayarlar → Sistem → Geliştirici seçenekleri’nde “USB hata ayıklama”yı açın (HUAWEI cihazlarda “Yalnızca şarj modunda ADB hata ayıklamaya izin ver”i de açın).\n3. Kabloyu Mac’e takın ve sorulduğunda USB hata ayıklamaya izin verin.\n4. Mac’te Mac Second Monitor’ü açın. Bu uygulama kendiliğinden açılır ve bağlanır.</string>
+    <string name="connect_button">Bağlan</string>
+    <string name="connect_network_title">Bu ağda</string>
+    <string name="connect_network_searching">Bu Wi-Fi ağında Mac aranıyor…</string>
+    <string name="connect_recent_title">Son kullanılanlar</string>
+    <string name="connect_manual_title">Adresle bağlan</string>
+    <string name="connect_manual_hint">Mac IP adresi</string>
+    <string name="connect_manual_invalid">Bir IP adresi veya ana bilgisayar adı girin.</string>
+    <string name="connect_host_detail">%1$s · port %2$d</string>
+
+    <!-- Stream -->
+    <string name="stream_connecting">%1$s cihazına bağlanılıyor…</string>
+    <string name="stream_starting">Ekran başlatılıyor…</string>
+    <string name="stream_reconnecting">Bağlantı koptu. Yeniden bağlanılıyor…</string>
+    <string name="stream_disconnected">Bağlantı kesildi</string>
+    <string name="stream_mac">Mac’iniz</string>
+    <string name="stream_usb">USB</string>
+    <string name="stream_wifi">Wi-Fi</string>
+    <string name="stream_retry">Tekrar dene</string>
+    <string name="stream_back">Geri</string>
+    <string name="stream_menu">Menü</string>
+    <string name="stream_menu_keyboard">Klavye</string>
+    <string name="stream_menu_stats">İstatistikleri göster</string>
+    <string name="stream_menu_disconnect">Bağlantıyı kes</string>
+    <string name="stream_exit_title">Mac ile bağlantı kesilsin mi?</string>
+    <string name="stream_exit_message">Ek ekran Mac’inizden kaldırılır.</string>
+    <string name="stream_stats">%1$.0f fps · %2$s · RTT %3$s · %4$.1f Mbps · %5$s</string>
+    <string name="stream_stats_latency">%1$.0f ms</string>
+    <string name="stream_stats_unknown">–</string>
+
+    <!-- Pairing -->
+    <string name="pairing_title">%1$s ile eşleştir</string>
+    <string name="pairing_message">Mac’inizde görünen 6 haneli kodu girin.</string>
+    <string name="pairing_button">Eşleştir</string>
+    <string name="pairing_cancel">Vazgeç</string>
+
+    <!-- Errors from the host -->
+    <string name="error_permission_missing">Mac’in Ekran Kaydı iznine ihtiyacı var. Mac’te Sistem Ayarları → Gizlilik ve Güvenlik → Ekran Kaydı bölümünden Mac Second Monitor’e izin verin ve tekrar deneyin.</string>
+    <string name="error_pairing_failed">Eşleştirme kodu yanlıştı. Yeni bir kod için tekrar deneyin.</string>
+    <string name="error_pairing_timeout">Eşleştirme zaman aşımına uğradı. Yeni bir kod için tekrar deneyin.</string>
+    <string name="error_unsupported_protocol">Bu uygulama ile Mac uygulaması uyumlu değil. İkisini de en son sürüme güncelleyin.</string>
+    <string name="error_display_unavailable">Mac ekranı başlatamadı.</string>
+    <string name="error_rejected">Mac bağlantıyı reddetti.</string>
+    <string name="error_replaced">Bu cihaz başka bir oturumdan yeniden bağlandı.</string>
+    <string name="error_network">Mac’e ulaşılamadı (%1$s).</string>
+    <string name="error_generic">Bir sorun oluştu: %1$s</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Ayarlar</string>
+    <string name="settings_display">Ekran</string>
+    <string name="settings_show_stats">İstatistikleri göster</string>
+    <string name="settings_show_stats_summary">Kare hızı, gecikme ve bit hızı görüntünün üzerinde gösterilir</string>
+    <string name="settings_menu_button">Menü düğmesini göster</string>
+    <string name="settings_menu_button_summary">Sağ kenarda küçük bir düğme. Üç parmakla dokunmak da menüyü açar.</string>
+    <string name="settings_input">Dokunma ve klavye</string>
+    <string name="settings_one_finger_scroll">Tek parmakla kaydır</string>
+    <string name="settings_one_finger_scroll_summary">Dokunmatik ekran gibi. Kapalıyken tek parmak sürükler, iki parmak kaydırır.</string>
+    <string name="settings_swap_ctrl_cmd">Ctrl tuşunu ⌘ Command olarak kullan</string>
+    <string name="settings_swap_ctrl_cmd_summary">PC klavyeleri için: Ctrl+C, Mac’te kopyalar</string>
+    <string name="settings_connection">Bağlantı</string>
+    <string name="settings_auto_usb">USB üzerinden otomatik bağlan</string>
+    <string name="settings_auto_usb_summary">Kablo takılır takılmaz ekranı başlat</string>
+    <string name="settings_forget">Eşleştirilmiş Mac’leri unut</string>
+    <string name="settings_forget_summary">Wi-Fi bağlantıları yeni bir eşleştirme kodu ister</string>
+    <string name="settings_forget_done">Eşleştirilmiş Mac’ler unutuldu</string>
+    <string name="settings_general">Genel</string>
+    <string name="settings_language">Dil</string>
+    <string name="settings_language_system">Sistem varsayılanı</string>
+    <string name="settings_version">Sürüm</string>
+    <plurals name="pairing_retry">
+        <item quantity="one">Kod yanlış. %1$d deneme hakkınız kaldı.</item>
+        <item quantity="other">Kod yanlış. %1$d deneme hakkınız kaldı.</item>
+    </plurals>
+</resources>

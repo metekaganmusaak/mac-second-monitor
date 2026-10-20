@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory app:title="@string/settings_display" app:iconSpaceReserved="false">
+        <SwitchPreferenceCompat
+            app:defaultValue="false"
+            app:iconSpaceReserved="false"
+            app:key="show_stats"
+            app:summary="@string/settings_show_stats_summary"
+            app:title="@string/settings_show_stats" />
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:iconSpaceReserved="false"
+            app:key="show_menu_button"
+            app:summary="@string/settings_menu_button_summary"
+            app:title="@string/settings_menu_button" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/settings_input" app:iconSpaceReserved="false">
+        <SwitchPreferenceCompat
+            app:defaultValue="false"
+            app:iconSpaceReserved="false"
+            app:key="one_finger_scroll"
+            app:summary="@string/settings_one_finger_scroll_summary"
+            app:title="@string/settings_one_finger_scroll" />
+        <SwitchPreferenceCompat
+            app:defaultValue="false"
+            app:iconSpaceReserved="false"
+            app:key="swap_ctrl_cmd"
+            app:summary="@string/settings_swap_ctrl_cmd_summary"
+            app:title="@string/settings_swap_ctrl_cmd" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/settings_connection" app:iconSpaceReserved="false">
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:iconSpaceReserved="false"
+            app:key="auto_connect_usb"
+            app:summary="@string/settings_auto_usb_summary"
+            app:title="@string/settings_auto_usb" />
+        <Preference
+            app:iconSpaceReserved="false"
+            app:key="forget_pairings"
+            app:summary="@string/settings_forget_summary"
+            app:title="@string/settings_forget" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/settings_general" app:iconSpaceReserved="false">
+        <ListPreference
+            app:defaultValue="system"
+            app:iconSpaceReserved="false"
+            app:key="language"
+            app:title="@string/settings_language"
+            app:useSimpleSummaryProvider="true" />
+        <Preference
+            app:iconSpaceReserved="false"
+            app:key="version"
+            app:selectable="false"
+            app:title="@string/settings_version" />
+    </PreferenceCategory>
+</PreferenceScreen>

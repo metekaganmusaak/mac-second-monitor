@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.textfield.TextInputLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pairingLayout"
+    style="?attr/textInputOutlinedStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="24dp"
+    android:paddingTop="8dp">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/pairingCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:inputType="number"
+        android:letterSpacing="0.4"
+        android:maxLength="6"
+        android:textSize="28sp" />
+</com.google.android.material.textfield.TextInputLayout>

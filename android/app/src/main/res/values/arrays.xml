@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Language names are shown in their own language on purpose. -->
+    <string-array name="language_values" translatable="false">
+        <item>system</item>
+        <item>en</item>
+        <item>tr</item>
+    </string-array>
+    <string-array name="language_native_names" translatable="false">
+        <item>English</item>
+        <item>Türkçe</item>
+    </string-array>
+</resources>

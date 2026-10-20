@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Mac Second Monitor</string>
+
+    <!-- Connect screen -->
+    <string name="connect_subtitle">Use this device as a display for your Mac.</string>
+    <string name="connect_settings">Settings</string>
+    <string name="connect_usb_title">USB cable</string>
+    <string name="connect_usb_searching">Looking for your Mac over USB…</string>
+    <string name="connect_usb_ready">Mac found over USB. Lowest latency.</string>
+    <string name="connect_usb_absent">Connect the cable and open Mac Second Monitor on the Mac.</string>
+    <string name="connect_usb_help">How to set up USB</string>
+    <string name="connect_usb_help_body">1. On this device, open Settings → About and tap “Build number” seven times to enable Developer options.\n2. In Settings → System → Developer options, turn on “USB debugging” (on HUAWEI devices also “Allow ADB debugging in charge only mode”).\n3. Connect the cable to the Mac and allow USB debugging when asked.\n4. Open Mac Second Monitor on the Mac. This app opens and connects by itself.</string>
+    <string name="connect_button">Connect</string>
+    <string name="connect_network_title">On this network</string>
+    <string name="connect_network_searching">Searching for Macs on this Wi-Fi network…</string>
+    <string name="connect_recent_title">Recent</string>
+    <string name="connect_manual_title">Connect by address</string>
+    <string name="connect_manual_hint">Mac IP address</string>
+    <string name="connect_manual_invalid">Enter an IP address or host name.</string>
+    <string name="connect_host_detail">%1$s · port %2$d</string>
+
+    <!-- Stream -->
+    <string name="stream_connecting">Connecting to %1$s…</string>
+    <string name="stream_starting">Starting the display…</string>
+    <string name="stream_reconnecting">Connection lost. Reconnecting…</string>
+    <string name="stream_disconnected">Disconnected</string>
+    <string name="stream_mac">your Mac</string>
+    <string name="stream_usb">USB</string>
+    <string name="stream_wifi">Wi-Fi</string>
+    <string name="stream_retry">Try again</string>
+    <string name="stream_back">Back</string>
+    <string name="stream_menu">Menu</string>
+    <string name="stream_menu_keyboard">Keyboard</string>
+    <string name="stream_menu_stats">Show statistics</string>
+    <string name="stream_menu_disconnect">Disconnect</string>
+    <string name="stream_exit_title">Disconnect from the Mac?</string>
+    <string name="stream_exit_message">The extra display disappears from your Mac.</string>
+    <string name="stream_stats">%1$.0f fps · %2$s · RTT %3$s · %4$.1f Mbps · %5$s</string>
+    <string name="stream_stats_latency">%1$.0f ms</string>
+    <string name="stream_stats_unknown">–</string>
+    <string name="stream_stats_decoder" translatable="false">%1$s\n%2$s</string>
+
+    <!-- Pairing -->
+    <string name="pairing_title">Pair with %1$s</string>
+    <string name="pairing_message">Enter the 6-digit code shown on your Mac.</string>
+    <string name="pairing_button">Pair</string>
+    <string name="pairing_cancel">Cancel</string>
+
+    <!-- Errors from the host -->
+    <string name="error_permission_missing">The Mac needs Screen Recording permission. On the Mac, allow Mac Second Monitor in System Settings → Privacy &amp; Security → Screen Recording, then try again.</string>
+    <string name="error_pairing_failed">The pairing code was wrong. Try again to get a new code.</string>
+    <string name="error_pairing_timeout">Pairing timed out. Try again to get a new code.</string>
+    <string name="error_unsupported_protocol">This app and the Mac app are not compatible. Update both to the latest version.</string>
+    <string name="error_display_unavailable">The Mac could not start the display.</string>
+    <string name="error_rejected">The Mac refused the connection.</string>
+    <string name="error_replaced">This device connected again from another session.</string>
+    <string name="error_network">Could not reach the Mac (%1$s).</string>
+    <string name="error_generic">Something went wrong: %1$s</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_display">Display</string>
+    <string name="settings_show_stats">Show statistics</string>
+    <string name="settings_show_stats_summary">Frame rate, latency and bitrate on top of the stream</string>
+    <string name="settings_menu_button">Show menu button</string>
+    <string name="settings_menu_button_summary">A small button on the right edge. A three-finger tap also opens the menu.</string>
+    <string name="settings_input">Touch and keyboard</string>
+    <string name="settings_one_finger_scroll">One finger scrolls</string>
+    <string name="settings_one_finger_scroll_summary">Like a touch screen. When off, one finger drags and two fingers scroll.</string>
+    <string name="settings_swap_ctrl_cmd">Use Ctrl as ⌘ Command</string>
+    <string name="settings_swap_ctrl_cmd_summary">For PC keyboards: Ctrl+C copies on the Mac</string>
+    <string name="settings_connection">Connection</string>
+    <string name="settings_auto_usb">Connect automatically over USB</string>
+    <string name="settings_auto_usb_summary">Start the display as soon as the cable is connected</string>
+    <string name="settings_forget">Forget paired Macs</string>
+    <string name="settings_forget_summary">Wi-Fi connections will ask for a new pairing code</string>
+    <string name="settings_forget_done">Paired Macs forgotten</string>
+    <string name="settings_general">General</string>
+    <string name="settings_language">Language</string>
+    <string name="settings_language_system">System default</string>
+    <string name="settings_version">Version</string>
+    <plurals name="pairing_retry">
+        <item quantity="one">Wrong code. %1$d attempt left.</item>
+        <item quantity="other">Wrong code. %1$d attempts left.</item>
+    </plurals>
+</resources>

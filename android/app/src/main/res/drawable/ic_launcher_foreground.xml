@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A Mac display and a tablet side by side, joined by a link. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Mac display -->
+    <path
+        android:fillColor="#2F6BFF"
+        android:pathData="M30,36h30a4,4 0,0 1,4 4v20a4,4 0,0 1,-4 4h-30a4,4 0,0 1,-4 -4v-20a4,4 0,0 1,4 -4z" />
+    <path
+        android:fillColor="#9DB8FF"
+        android:pathData="M40,64h10v5h-10z" />
+    <path
+        android:fillColor="#9DB8FF"
+        android:pathData="M36,69h18a1.5,1.5 0,0 1,0 3h-18a1.5,1.5 0,0 1,0 -3z" />
+    <!-- Tablet -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M58,46h20a4,4 0,0 1,4 4v18a4,4 0,0 1,-4 4h-20a4,4 0,0 1,-4 -4v-18a4,4 0,0 1,4 -4z" />
+    <path
+        android:fillColor="#2F6BFF"
+        android:pathData="M59,49h18a2,2 0,0 1,2 2v16a2,2 0,0 1,-2 2h-18a2,2 0,0 1,-2 -2v-16a2,2 0,0 1,2 -2z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.85"
+        android:pathData="M62,53h12v2h-12zM62,57h8v2h-8z" />
+</vector>

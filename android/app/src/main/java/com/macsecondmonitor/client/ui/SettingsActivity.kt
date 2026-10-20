@@ -1,0 +1,74 @@
+package com.macsecondmonitor.client.ui
+
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.os.LocaleListCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
+import androidx.preference.ListPreference
+import androidx.preference.Preference
+import androidx.preference.PreferenceFragmentCompat
+import com.google.android.material.appbar.MaterialToolbar
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
+import com.macsecondmonitor.client.BuildConfig
+import com.macsecondmonitor.client.R
+import com.macsecondmonitor.client.data.AppSettings
+
+class SettingsActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_settings)
+        val root = findViewById<android.view.View>(R.id.root)
+        ViewCompat.setOnApplyWindowInsetsListener(root) { view, insets ->
+            val bars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            view.updatePadding(top = bars.top, bottom = bars.bottom)
+            insets
+        }
+        findViewById<MaterialToolbar>(R.id.toolbar).apply {
+            setTitle(R.string.settings_title)
+            setNavigationIcon(androidx.appcompat.R.drawable.abc_ic_ab_back_material)
+            setNavigationOnClickListener { finish() }
+        }
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction().replace(R.id.settingsContainer, SettingsFragment()).commit()
+        }
+    }
+
+    class SettingsFragment : PreferenceFragmentCompat() {
+        override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+            setPreferencesFromResource(R.xml.preferences, rootKey)
+
+            findPreference<ListPreference>(AppSettings.PREF_LANGUAGE)?.apply {
+                entryValues = resources.getStringArray(R.array.language_values)
+                entries = arrayOf(getString(R.string.settings_language_system)) + resources.getStringArray(R.array.language_native_names)
+                val current = AppCompatDelegate.getApplicationLocales().toLanguageTags()
+                value = if (current.isEmpty()) "system" else current.substringBefore('-')
+                setOnPreferenceChangeListener { _, newValue ->
+                    val tag = newValue as String
+                    AppCompatDelegate.setApplicationLocales(
+                        if (tag == "system") LocaleListCompat.getEmptyLocaleList() else LocaleListCompat.forLanguageTags(tag),
+                    )
+                    true
+                }
+            }
+
+            findPreference<Preference>(AppSettings.PREF_FORGET)?.setOnPreferenceClickListener {
+                MaterialAlertDialogBuilder(requireContext())
+                    .setTitle(R.string.settings_forget)
+                    .setMessage(R.string.settings_forget_summary)
+                    .setPositiveButton(R.string.settings_forget) { _, _ ->
+                        AppSettings(requireContext()).forgetPairings()
+                        Snackbar.make(requireView(), R.string.settings_forget_done, Snackbar.LENGTH_SHORT).show()
+                    }
+                    .setNegativeButton(R.string.pairing_cancel, null)
+                    .show()
+                true
+            }
+
+            findPreference<Preference>(AppSettings.PREF_VERSION)?.summary = BuildConfig.VERSION_NAME
+        }
+    }
+}
