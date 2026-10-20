@@ -1,0 +1,23 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "NSLocalNetworkUsageDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac Second Monitor finds Macs on your local network and shows their extra display on this device."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac Second Monitor, yerel ağınızdaki Mac'leri bulur ve onların ek ekranını bu cihazda gösterir."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
