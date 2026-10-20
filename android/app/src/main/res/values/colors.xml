@@ -2,7 +2,6 @@
 <resources>
     <color name="brand">#2F6BFF</color>
     <color name="brand_dark">#1D4FD1</color>
-    <color name="icon_background">#0F1A33</color>
     <color name="stream_background">#000000</color>
     <color name="overlay_text">#FFFFFFFF</color>
     <color name="status_ok">#2DB36A</color>

@@ -48,15 +48,23 @@ final class Locked<Value>: @unchecked Sendable {
 
 /// Localized strings from `Resources/Localizable.xcstrings`.
 public enum L10n {
-    /// Inside the .app the SwiftPM resource bundle is copied into Contents/Resources;
-    /// during development `Bundle.module` finds it next to the build products.
+    /// Inside the .app the SwiftPM resource bundle is copied into Contents/Resources; command-line
+    /// builds keep it next to the executable. Never crash when it's missing (e.g. the app was
+    /// deleted or replaced while running): untranslated keys are better than a trap.
     public static let bundle: Bundle = {
         let bundleName = "MacSecondMonitor_MSMHost.bundle"
-        if let url = Bundle.main.resourceURL?.appendingPathComponent(bundleName),
-           let bundle = Bundle(url: url) {
-            return bundle
+        let candidates = [Bundle.main.resourceURL, Bundle.main.bundleURL, Bundle.main.executableURL?.deletingLastPathComponent()]
+        for case let directory? in candidates {
+            if let bundle = Bundle(url: directory.appendingPathComponent(bundleName)) {
+                return bundle
+            }
         }
+        #if DEBUG
+        // `swift test` and Xcode runs: SwiftPM's accessor knows the build directory.
         return Bundle.module
+        #else
+        return Bundle.main
+        #endif
     }()
 
     public static func tr(_ key: String) -> String {

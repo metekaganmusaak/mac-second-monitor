@@ -33,6 +33,9 @@ web client and can install the Android app on a connected device with one click.
 
 You can also open `Package.swift` in Xcode and run the `MacSecondMonitor` scheme.
 
+`swift scripts/make-icon.swift` regenerates the app icon for every platform (macOS, iOS, Android,
+web) from one design.
+
 ## Package layout
 
 | Target | Kind | Contents |

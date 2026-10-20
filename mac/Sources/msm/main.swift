@@ -240,7 +240,7 @@ enum Probe {
             deviceId: "msm-probe-\(width)x\(height)",
             deviceName: "msm probe",
             platform: "macos",
-            appVersion: "0.1.0",
+            appVersion: "0.1.1",
             display: DisplayInfo(width: width, height: height, dpi: 220, refreshRate: 60),
             codecs: hevc ? ["hevc", "h264"] : ["h264"],
             locale: Locale.current.identifier

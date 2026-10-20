@@ -58,6 +58,14 @@ final class AppModel: ObservableObject {
         return "http://\(address.address):\(MSMProtocolInfo.webPort)/"
     }
 
+    /// `versionCode` of the bundled APK (written by build-app.sh), to offer updates.
+    var bundledAPKVersion: Int? {
+        guard let url = Bundle.main.resourceURL?.appendingPathComponent("android/version.txt"),
+              let text = try? String(contentsOf: url, encoding: .utf8)
+        else { return nil }
+        return Int(text.trimmingCharacters(in: .whitespacesAndNewlines))
+    }
+
     /// The bundled Android client, if the app was packaged with one.
     var bundledAPK: URL? {
         let url = Bundle.main.resourceURL?.appendingPathComponent("android/MacSecondMonitor.apk")

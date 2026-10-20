@@ -14,8 +14,8 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 ROOT="$(cd .. && pwd)"
 CONFIG="${CONFIG:-release}"
-VERSION="${VERSION:-0.1.0}"
-BUILD="${BUILD:-1}"
+VERSION="${VERSION:-0.1.1}"
+BUILD="${BUILD:-2}"
 # The bundle and its executable carry the product name (Finder, Activity Monitor, privacy settings).
 APP="build/Mac Second Monitor.app"
 
@@ -56,6 +56,8 @@ if [ -n "$APK" ]; then
     echo "==> Bundling Android client ($(basename "$APK"))"
     mkdir -p "$APP/Contents/Resources/android"
     cp "$APK" "$APP/Contents/Resources/android/MacSecondMonitor.apk"
+    # Lets the menu offer "Update App" when a device has an older version.
+    sed -nE 's/^[[:space:]]*versionCode = ([0-9]+).*/\1/p' "$ROOT/android/app/build.gradle.kts" > "$APP/Contents/Resources/android/version.txt"
 else
     echo "    (Android client not built; run './gradlew assembleRelease' in android/ to bundle it)"
 fi

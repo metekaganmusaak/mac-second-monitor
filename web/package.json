@@ -1,6 +1,6 @@
 {
   "name": "mac-second-monitor-web",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "Zero-install browser client for Mac Second Monitor",
   "type": "module",

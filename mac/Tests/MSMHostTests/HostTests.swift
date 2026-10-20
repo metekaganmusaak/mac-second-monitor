@@ -282,6 +282,12 @@ struct EncodeDecodeRoundTrip {
         #expect(!reloaded.isUSBSecret(nil))
     }
 
+    @Test func parsesInstalledVersionCode() {
+        let dumpsys = "Packages:\n  Package [com.macsecondmonitor.client] (1a2b):\n    versionCode=7 minSdk=26 targetSdk=36\n    versionName=0.3.0"
+        #expect(AdbBridge.parseVersionCode(dumpsys) == 7)
+        #expect(AdbBridge.parseVersionCode("Unable to find package: com.macsecondmonitor.client") == nil)
+    }
+
     @Test func adbLaunchPassesSecret() {
         let arguments = AdbBridge.launchArguments(serial: "ABC", secret: "s3cret")
         #expect(arguments.prefix(4) == ["-s", "ABC", "shell", "am"])

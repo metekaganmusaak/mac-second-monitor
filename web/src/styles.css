@@ -334,6 +334,14 @@ body {
   z-index: 5;
 }
 
+/* On narrow phones the centred toolbar would cover the overlay; keep the overlay at the bottom. */
+@media (max-width: 520px) {
+  .stats {
+    top: auto;
+    bottom: max(10px, env(safe-area-inset-bottom));
+  }
+}
+
 /* Monospace fonts have no usable Arabic glyphs (the fallback is fixed-pitch Courier New); tabular-nums keeps the digits aligned. */
 .stats:lang(ar) {
   font-family: inherit;

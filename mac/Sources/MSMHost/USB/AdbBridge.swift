@@ -27,17 +27,20 @@ public struct AdbDevice: Sendable, Equatable, Identifiable {
     public var bridge: Bridge = .waiting
     /// Whether the Android client app is installed, once known.
     public var clientInstalled: Bool?
+    /// `versionCode` of the installed app, to offer updates.
+    public var clientVersionCode: Int?
 
     public var displayName: String {
         model?.replacingOccurrences(of: "_", with: " ") ?? serial
     }
 
-    public init(serial: String, state: State, model: String?, bridge: Bridge = .waiting, clientInstalled: Bool? = nil) {
+    public init(serial: String, state: State, model: String?, bridge: Bridge = .waiting, clientInstalled: Bool? = nil, clientVersionCode: Int? = nil) {
         self.serial = serial
         self.state = state
         self.model = model
         self.bridge = bridge
         self.clientInstalled = clientInstalled
+        self.clientVersionCode = clientVersionCode
     }
 }
 
@@ -217,6 +220,7 @@ public final class AdbBridge: @unchecked Sendable {
                 if let previous = _devices[device.serial], previous.state == device.state {
                     device.bridge = previous.bridge
                     device.clientInstalled = previous.clientInstalled
+                    device.clientVersionCode = previous.clientVersionCode
                 } else if device.state == .device {
                     needsBridge.append(device.serial)
                 }
@@ -250,8 +254,12 @@ public final class AdbBridge: @unchecked Sendable {
                 return
             }
 
-            let installed = Self.isClientInstalled(adb: adb, serial: serial)
-            self.updateDevice(serial) { $0.clientInstalled = installed }
+            let version = Self.installedVersionCode(adb: adb, serial: serial)
+            let installed = version != nil
+            self.updateDevice(serial) {
+                $0.clientInstalled = installed
+                $0.clientVersionCode = version
+            }
             if installed, options.launchClient {
                 _ = try? Self.runSync(adb, Self.launchArguments(serial: serial, secret: options.secret), timeout: 15)
             }
@@ -261,14 +269,24 @@ public final class AdbBridge: @unchecked Sendable {
     private func refreshClientState(_ serial: String) {
         guard let adb = adbPath else { return }
         commandQueue.async { [weak self] in
-            let installed = Self.isClientInstalled(adb: adb, serial: serial)
-            self?.updateDevice(serial) { $0.clientInstalled = installed }
+            let version = Self.installedVersionCode(adb: adb, serial: serial)
+            self?.updateDevice(serial) {
+                $0.clientInstalled = version != nil
+                $0.clientVersionCode = version
+            }
         }
     }
 
-    private static func isClientInstalled(adb: String, serial: String) -> Bool {
-        let result = try? runSync(adb, ["-s", serial, "shell", "pm", "path", clientPackage], timeout: 15)
-        return result?.output.contains("package:") == true
+    /// nil when the app isn't installed.
+    private static func installedVersionCode(adb: String, serial: String) -> Int? {
+        guard let result = try? runSync(adb, ["-s", serial, "shell", "dumpsys", "package", clientPackage], timeout: 15) else { return nil }
+        return parseVersionCode(result.output)
+    }
+
+    /// Reads `versionCode=N` from `dumpsys package` output.
+    static func parseVersionCode(_ dumpsys: String) -> Int? {
+        guard let range = dumpsys.range(of: "versionCode=") else { return nil }
+        return Int(dumpsys[range.upperBound...].prefix { $0.isNumber })
     }
 
     private func updateDevice(_ serial: String, _ change: (inout AdbDevice) -> Void) {

@@ -135,6 +135,7 @@ The welcome window walks you through both. They are only used locally:
 **Install the app** — any one of these:
 
 - On the Mac, once USB debugging is on (below), click **Install App** in the menu bar popover.
+  When a newer version ships with the Mac app, the same place offers **Update App**.
 - Download `MacSecondMonitor-<version>.apk` from the
   [latest release](https://github.com/metekaganmusaak/mac-second-monitor/releases/latest) on the
   device, open it and allow *Install unknown apps* when asked.
@@ -261,6 +262,7 @@ The device now shows up in **System Settings → Displays** like any monitor:
 | The Mac isn't listed on the device over Wi-Fi | Same network? Guest networks often isolate devices — type the Mac's IP address instead |
 | "Too many wrong codes" | Pairing pauses briefly after three wrong codes; wait the time shown and try again |
 | iPad over USB doesn't connect | Keep the app open in the foreground; trust the Mac on the iPad if asked |
+| The device says *Mac Second Monitor was closed on the Mac* | Open the app on the Mac again — the device reconnects by itself |
 | Text looks soft | Pick the default "looks like" size in *System Settings → Displays*, or set *Quality → High* |
 
 ## ❓ FAQ

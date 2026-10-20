@@ -135,7 +135,7 @@ struct MenuBarView: View {
                 HintText(model.adbStatus == .running ? L10n.tr("usb.none") : L10n.tr("usb.adb.starting"))
             }
             ForEach(model.usbDevices) { device in
-                UsbDeviceRow(device: device, canInstall: model.bundledAPK != nil, installing: model.installing.contains(device.serial)) {
+                UsbDeviceRow(device: device, canInstall: model.bundledAPK != nil, bundledVersion: model.bundledAPKVersion, installing: model.installing.contains(device.serial)) {
                     model.install(on: device)
                 } launch: {
                     model.launchClient(on: device)
@@ -330,6 +330,7 @@ private struct SessionRow: View {
 private struct UsbDeviceRow: View {
     let device: AdbDevice
     let canInstall: Bool
+    let bundledVersion: Int?
     let installing: Bool
     let install: () -> Void
     let launch: () -> Void
@@ -345,13 +346,21 @@ private struct UsbDeviceRow: View {
             if installing {
                 ProgressView().controlSize(.small)
             } else if device.state == .device, device.bridge == .ready {
-                if device.clientInstalled == true {
+                if device.clientInstalled == true, updateAvailable {
+                    Button(L10n.tr("usb.update"), action: install).controlSize(.small)
+                } else if device.clientInstalled == true {
                     Button(L10n.tr("usb.open"), action: launch).controlSize(.small)
                 } else if device.clientInstalled == false, canInstall {
                     Button(L10n.tr("usb.install"), action: install).controlSize(.small)
                 }
             }
         }
+    }
+
+    /// The Mac carries a newer Android app than the one on the device.
+    private var updateAvailable: Bool {
+        guard canInstall, let bundledVersion, let installed = device.clientVersionCode else { return false }
+        return bundledVersion > installed
     }
 
     private var status: String {
@@ -367,7 +376,7 @@ private struct UsbDeviceRow: View {
                 if device.clientInstalled == false {
                     return canInstall ? L10n.tr("usb.state.notInstalled") : L10n.tr("usb.state.notInstalledManual")
                 }
-                return L10n.tr("usb.state.ready")
+                return L10n.tr(updateAvailable ? "usb.state.updateAvailable" : "usb.state.ready")
             }
         }
     }

@@ -12,8 +12,8 @@ android {
         // Android 8.0; HarmonyOS 2–4 devices run the Android app as-is.
         minSdk = 26
         targetSdk = 36
-        versionCode = 1
-        versionName = "0.1.0"
+        versionCode = 2
+        versionName = "0.1.1"
     }
 
     // Release signing comes from the environment so no secrets live in the repository.
