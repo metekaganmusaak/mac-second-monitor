@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>en</string>
+    <key>CFBundleLocalizations</key>
+    <array>
+        <string>en</string>
+        <string>tr</string>
+    </array>
+    <key>CFBundleDisplayName</key>
+    <string>Mac Second Monitor</string>
+    <key>CFBundleName</key>
+    <string>Mac Second Monitor</string>
+    <key>CFBundleExecutable</key>
+    <string>MacSecondMonitor</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.macsecondmonitor.host</string>
+    <key>CFBundleIconFile</key>
+    <string>AppIcon</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>__VERSION__</string>
+    <key>CFBundleVersion</key>
+    <string>__BUILD__</string>
+    <key>LSApplicationCategoryType</key>
+    <string>public.app-category.productivity</string>
+    <key>LSMinimumSystemVersion</key>
+    <string>14.0</string>
+    <!-- Menu bar app: no Dock icon. -->
+    <key>LSUIElement</key>
+    <true/>
+    <key>NSBonjourServices</key>
+    <array>
+        <string>_macsecondmon._tcp</string>
+    </array>
+    <key>NSLocalNetworkUsageDescription</key>
+    <string>Mac Second Monitor streams this Mac's extra display to your tablets, phones and computers on the local network.</string>
+    <key>NSHumanReadableCopyright</key>
+    <string>Mac Second Monitor contributors</string>
+    <key>NSSupportsAutomaticTermination</key>
+    <false/>
+</dict>
+</plist>
