@@ -18,6 +18,7 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/metekaganmusaak/mac-second-monitor/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/metekaganmusaak/mac-second-monitor?label=download&color=2F6BFF"></a>
   <img alt="macOS 14+" src="https://img.shields.io/badge/macOS-14%2B-000000?logo=apple&logoColor=white">
   <img alt="Android 8+" src="https://img.shields.io/badge/Android-8%2B-3DDC84?logo=android&logoColor=white">
   <img alt="iOS / iPadOS 16+" src="https://img.shields.io/badge/iOS%20%2F%20iPadOS-16%2B-0A84FF?logo=apple&logoColor=white">
@@ -88,8 +89,12 @@ drag windows onto it, arrange it in System Settings, and touch, draw and type on
 ### Step 1 — Install the Mac app
 
 **Download:** grab `MacSecondMonitor-<version>.dmg` from the
-[Releases](https://github.com/metekaganmusaak/mac-second-monitor/releases) page, open it and drag
-**Mac Second Monitor** into **Applications**.
+[latest release](https://github.com/metekaganmusaak/mac-second-monitor/releases/latest), open it
+and drag **Mac Second Monitor** into **Applications**.
+
+> **First launch:** the app isn't notarized by Apple yet, so macOS asks whether to open it.
+> Right-click the app → **Open** → **Open** (or *System Settings → Privacy & Security →
+> Open Anyway*). You only have to do this once.
 
 **Or build it yourself** (a few minutes, needs Xcode 16+):
 
@@ -130,8 +135,9 @@ The welcome window walks you through both. They are only used locally:
 **Install the app** — any one of these:
 
 - On the Mac, once USB debugging is on (below), click **Install App** in the menu bar popover.
-- Copy the APK (`MacSecondMonitor-<version>.apk` from Releases) to the device, open it and allow
-  *Install unknown apps* when asked.
+- Download `MacSecondMonitor-<version>.apk` from the
+  [latest release](https://github.com/metekaganmusaak/mac-second-monitor/releases/latest) on the
+  device, open it and allow *Install unknown apps* when asked.
 - From a terminal: `adb install MacSecondMonitor.apk`.
 
 **Turn on USB debugging** (only needed for the cable). It lets the Mac open a data tunnel to the
@@ -353,6 +359,10 @@ full host pipeline on macOS 26 (real virtual-display capture), the Android app o
 in the emulator at tablet resolution (2560×1600), the iOS app in the iPad and iPhone simulators
 (H.264 and HEVC), and the browser client in Chrome. **Not yet verified on physical devices** —
 reports and pull requests are very welcome.
+
+### What's new
+
+See the [changelog](CHANGELOG.md).
 
 ## 🤝 Contributing
 

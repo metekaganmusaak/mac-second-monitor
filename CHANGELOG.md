@@ -10,6 +10,9 @@ First public preview. Every phase of the [roadmap](docs/ROADMAP.md) has a workin
 implementation; it has been verified on macOS 26, in the Android emulator, the iOS simulator and
 Chrome, but **not yet on physical tablets** — feedback is very welcome.
 
+**Downloads:** `MacSecondMonitor-0.1.0.dmg` (Mac app; includes the browser client and the Android
+APK for one-click install) and `MacSecondMonitor-0.1.0.apk` (Android 8+ / HarmonyOS 2–4).
+
 ### Added
 
 **macOS host (menu bar app)**
@@ -50,6 +53,7 @@ Chrome, but **not yet on physical tablets** — feedback is very welcome.
 **Everywhere**
 - 12 languages: English, Turkish, German, Spanish, French, Italian, Brazilian Portuguese, Russian,
   Simplified Chinese, Japanese, Korean and Arabic (right-to-left).
+- Pairing codes can be typed with any digits the keyboard produces (Arabic-Indic, full-width).
 - Wire protocol v1 ([PROTOCOL.md](docs/PROTOCOL.md)), CI for all four apps.
 
 ### Security
