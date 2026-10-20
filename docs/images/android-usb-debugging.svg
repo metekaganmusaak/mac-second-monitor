@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="210" viewBox="0 0 1280 210" role="img" aria-labelledby="t d">
+  <title id="t">Turn on USB debugging on Android</title>
+  <desc id="d">Settings, About phone or tablet, tap Build number seven times, Developer options, USB debugging on.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
+    .s { fill: #FFFFFF; font-size: 17px; font-weight: 700; }
+    .n { fill: #8EA2D6; font-size: 13px; }
+    .k { fill: #FFFFFF; font-size: 15px; font-weight: 800; }
+  </style>
+  <rect width="1280" height="210" rx="24" fill="#0F1A33"/>
+
+  <g transform="translate(30 40)">
+    <rect width="220" height="130" rx="18" fill="#16244A"/>
+    <circle cx="30" cy="30" r="15" fill="#2F6BFF"/><text class="k" x="30" y="35" text-anchor="middle">1</text>
+    <text class="s" x="110" y="74" text-anchor="middle">Settings</text>
+    <text class="n" x="110" y="98" text-anchor="middle">the gear app</text>
+  </g>
+  <g transform="translate(278 40)">
+    <rect width="220" height="130" rx="18" fill="#16244A"/>
+    <circle cx="30" cy="30" r="15" fill="#2F6BFF"/><text class="k" x="30" y="35" text-anchor="middle">2</text>
+    <text class="s" x="110" y="74" text-anchor="middle">About tablet</text>
+    <text class="n" x="110" y="98" text-anchor="middle">or "About phone"</text>
+  </g>
+  <g transform="translate(526 40)">
+    <rect width="228" height="130" rx="18" fill="#16244A" stroke="#F59E0B" stroke-width="2"/>
+    <circle cx="30" cy="30" r="15" fill="#F59E0B"/><text class="k" x="30" y="35" text-anchor="middle">3</text>
+    <text class="s" x="114" y="66" text-anchor="middle">Build number</text>
+    <text class="n" x="114" y="90" text-anchor="middle">tap it 7 times</text>
+    <g fill="#F59E0B">
+      <circle cx="69" cy="110" r="5"/><circle cx="84" cy="110" r="5"/><circle cx="99" cy="110" r="5"/><circle cx="114" cy="110" r="5"/>
+      <circle cx="129" cy="110" r="5"/><circle cx="144" cy="110" r="5"/><circle cx="159" cy="110" r="5"/>
+    </g>
+  </g>
+  <g transform="translate(782 40)">
+    <rect width="220" height="130" rx="18" fill="#16244A"/>
+    <circle cx="30" cy="30" r="15" fill="#2F6BFF"/><text class="k" x="30" y="35" text-anchor="middle">4</text>
+    <text class="s" x="110" y="74" text-anchor="middle">Developer options</text>
+    <text class="n" x="110" y="98" text-anchor="middle">usually under System</text>
+  </g>
+  <g transform="translate(1030 40)">
+    <rect width="220" height="130" rx="18" fill="#16244A" stroke="#28C840" stroke-width="2"/>
+    <circle cx="30" cy="30" r="15" fill="#28C840"/><text class="k" x="30" y="35" text-anchor="middle">5</text>
+    <text class="s" x="96" y="74" text-anchor="middle">USB debugging</text>
+    <rect x="166" y="58" width="40" height="22" rx="11" fill="#28C840"/>
+    <circle cx="195" cy="69" r="8" fill="#FFFFFF"/>
+    <text class="n" x="110" y="104" text-anchor="middle">turn it on, accept the prompt</text>
+  </g>
+
+  <g fill="#3A4D80">
+    <path d="M272 105l-18-9v18z"/>
+    <path d="M520 105l-18-9v18z"/>
+    <path d="M776 105l-18-9v18z"/>
+    <path d="M1024 105l-18-9v18z"/>
+  </g>
+</svg>

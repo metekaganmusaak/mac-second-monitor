@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="230" viewBox="0 0 880 230" role="img" aria-labelledby="title desc">
+  <title id="title">Latency budget over USB</title>
+  <desc id="desc">Capture 8 ms, encode 9 ms, USB transfer 2 ms, decode 5 ms, display 8 ms: about 32 ms from the Mac's frame to the tablet's panel.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
+    .label { fill: #FFFFFF; font-size: 14px; font-weight: 600; }
+    .ms { fill: #FFFFFF; font-size: 12px; opacity: 0.85; }
+    .title { fill: #FFFFFF; font-size: 18px; font-weight: 700; }
+    .note { fill: #AFC3FF; font-size: 12px; }
+  </style>
+  <!-- Own background so it reads the same in light and dark themes. -->
+  <rect width="880" height="230" rx="20" fill="#0F1A33"/>
+  <text class="title" x="40" y="34">Latency budget · USB · 2560×1600 @ 60 fps</text>
+
+  <!-- 1 ms = 25 px; total 32 ms = 800 px -->
+  <g transform="translate(40 52)">
+    <rect x="0" y="0" width="200" height="64" rx="10" fill="#2F6BFF"/>
+    <text class="label" x="14" y="28">Capture</text>
+    <text class="ms" x="14" y="48">~8 ms · ScreenCaptureKit</text>
+
+    <rect x="204" y="0" width="221" height="64" rx="10" fill="#6A4CFF"/>
+    <text class="label" x="218" y="28">Encode</text>
+    <text class="ms" x="218" y="48">~9 ms · VideoToolbox H.264</text>
+
+    <rect x="429" y="0" width="46" height="64" rx="10" fill="#14B8A6"/>
+    <text class="label" x="438" y="28">USB</text>
+    <text class="ms" x="438" y="48">~2</text>
+
+    <rect x="479" y="0" width="121" height="64" rx="10" fill="#F59E0B"/>
+    <text class="label" x="493" y="28">Decode</text>
+    <text class="ms" x="493" y="48">~5 ms</text>
+
+    <rect x="604" y="0" width="196" height="64" rx="10" fill="#FF7A59"/>
+    <text class="label" x="618" y="28">Display</text>
+    <text class="ms" x="618" y="48">≤8 ms · 120 Hz panel</text>
+  </g>
+
+  <g transform="translate(40 132)" stroke="#5B6B91" stroke-width="1.5" fill="none">
+    <path d="M0 0v10M0 5H800M800 0v10"/>
+  </g>
+  <text class="note" x="440" y="160" text-anchor="middle" style="font-size:14px;font-weight:600;fill:#FFFFFF">≈ 32 ms glass to glass</text>
+  <text class="note" x="40" y="192">Capture and encode measured on an M4 Pro; decode and display depend on the tablet.</text>
+  <text class="note" x="40" y="210">Frames are never queued: a late frame is skipped, so latency stays flat under load.</text>
+</svg>

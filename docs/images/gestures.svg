@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="250" viewBox="0 0 1280 250" role="img" aria-labelledby="t d">
+  <title id="t">Touch gestures</title>
+  <desc id="d">Tap to click, drag to click and drag, long press or two-finger tap to right-click, two-finger drag to scroll, three-finger tap for the menu, pen for a precise pointer with pressure.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
+    .g { fill: #FFFFFF; font-size: 16px; font-weight: 700; }
+    .a { fill: #AFC3FF; font-size: 14px; }
+  </style>
+  <rect width="1280" height="250" rx="24" fill="#0F1A33"/>
+  <defs>
+    <g id="dot"><circle r="15" fill="#2F6BFF" opacity="0.25"/><circle r="8" fill="#FFFFFF"/></g>
+  </defs>
+
+  <!-- 7 tiles, 170 wide, 12 gap, starting at 26 -->
+  <g transform="translate(26 26)">
+    <rect width="168" height="198" rx="16" fill="#16244A"/>
+    <use href="#dot" x="84" y="72"/>
+    <circle cx="84" cy="72" r="28" fill="none" stroke="#7FA6FF" stroke-width="2" stroke-dasharray="4 5"/>
+    <text class="g" x="84" y="150" text-anchor="middle">Tap</text>
+    <text class="a" x="84" y="174" text-anchor="middle">Click</text>
+  </g>
+  <g transform="translate(206 26)">
+    <rect width="168" height="198" rx="16" fill="#16244A"/>
+    <path d="M44 72h70" stroke="#7FA6FF" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 9"/>
+    <path d="M114 62l14 10-14 10" fill="none" stroke="#7FA6FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <use href="#dot" x="44" y="72"/>
+    <text class="g" x="84" y="150" text-anchor="middle">Drag</text>
+    <text class="a" x="84" y="174" text-anchor="middle">Click and drag</text>
+  </g>
+  <g transform="translate(386 26)">
+    <rect width="168" height="198" rx="16" fill="#16244A"/>
+    <use href="#dot" x="84" y="72"/>
+    <circle cx="84" cy="72" r="30" fill="none" stroke="#B9A8FF" stroke-width="4"/>
+    <path d="M84 42a30 30 0 0 1 30 30" fill="none" stroke="#6A4CFF" stroke-width="4"/>
+    <text class="g" x="84" y="150" text-anchor="middle">Long press</text>
+    <text class="a" x="84" y="174" text-anchor="middle">Right-click</text>
+  </g>
+  <g transform="translate(566 26)">
+    <rect width="168" height="198" rx="16" fill="#16244A"/>
+    <use href="#dot" x="66" y="72"/>
+    <use href="#dot" x="102" y="72"/>
+    <text class="g" x="84" y="150" text-anchor="middle">Two-finger tap</text>
+    <text class="a" x="84" y="174" text-anchor="middle">Right-click</text>
+  </g>
+  <g transform="translate(746 26)">
+    <rect width="168" height="198" rx="16" fill="#16244A"/>
+    <path d="M66 46v50M102 46v50" stroke="#7FE0D4" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 9"/>
+    <path d="M56 94l10 14 10-14M92 94l10 14 10-14" fill="none" stroke="#7FE0D4" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <use href="#dot" x="66" y="52"/>
+    <use href="#dot" x="102" y="52"/>
+    <text class="g" x="84" y="150" text-anchor="middle">Two-finger drag</text>
+    <text class="a" x="84" y="174" text-anchor="middle">Scroll (with momentum)</text>
+  </g>
+  <g transform="translate(926 26)">
+    <rect width="168" height="198" rx="16" fill="#16244A"/>
+    <use href="#dot" x="52" y="76"/>
+    <use href="#dot" x="84" y="64"/>
+    <use href="#dot" x="116" y="76"/>
+    <text class="g" x="84" y="150" text-anchor="middle">Three-finger tap</text>
+    <text class="a" x="84" y="174" text-anchor="middle">App menu</text>
+  </g>
+  <g transform="translate(1106 26)">
+    <rect width="148" height="198" rx="16" fill="#16244A"/>
+    <g transform="translate(74 70) rotate(40)">
+      <rect x="-7" y="-46" width="14" height="70" rx="6" fill="#FFFFFF"/>
+      <path d="M-7 24l7 18 7-18z" fill="#FFB199"/>
+    </g>
+    <text class="g" x="74" y="150" text-anchor="middle">Pen</text>
+    <text class="a" x="74" y="174" text-anchor="middle">Pressure, hover</text>
+  </g>
+</svg>

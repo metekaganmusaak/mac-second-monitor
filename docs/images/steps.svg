@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="300" viewBox="0 0 1280 300" role="img" aria-labelledby="t d">
+  <title id="t">Four steps to a second display</title>
+  <desc id="d">1 Install the Mac app. 2 Allow two permissions. 3 Install the app on your device, or use a browser. 4 Plug in the cable or pair over Wi-Fi.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
+    .title { fill: #FFFFFF; font-size: 20px; font-weight: 700; }
+    .sub { fill: #AFC3FF; font-size: 14px; }
+    .num { fill: #FFFFFF; font-size: 18px; font-weight: 800; }
+  </style>
+  <rect width="1280" height="300" rx="24" fill="#0F1A33"/>
+
+  <!-- Card 1 -->
+  <g transform="translate(30 30)">
+    <rect width="275" height="240" rx="18" fill="#16244A" stroke="#2A3B66"/>
+    <circle cx="34" cy="34" r="18" fill="#2F6BFF"/><text class="num" x="34" y="40" text-anchor="middle">1</text>
+    <g transform="translate(88 58)" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="0" y="0" width="100" height="64" rx="8"/>
+      <path d="M-14 78h128"/>
+      <path d="M50 14v30M38 32l12 12 12-12" stroke="#7FA6FF"/>
+    </g>
+    <text class="title" x="137" y="180" text-anchor="middle">Install on the Mac</text>
+    <text class="sub" x="137" y="206" text-anchor="middle">Menu bar app · macOS 14+</text>
+  </g>
+
+  <!-- Card 2 -->
+  <g transform="translate(345 30)">
+    <rect width="275" height="240" rx="18" fill="#16244A" stroke="#2A3B66"/>
+    <circle cx="34" cy="34" r="18" fill="#6A4CFF"/><text class="num" x="34" y="40" text-anchor="middle">2</text>
+    <g transform="translate(103 50)" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M35 0l35 14v26c0 24-16 40-35 48C16 80 0 64 0 40V14z"/>
+      <path d="M20 44l11 11 21-23" stroke="#B9A8FF"/>
+    </g>
+    <text class="title" x="137" y="180" text-anchor="middle">Allow 2 permissions</text>
+    <text class="sub" x="137" y="206" text-anchor="middle">Screen Recording · Accessibility</text>
+  </g>
+
+  <!-- Card 3 -->
+  <g transform="translate(660 30)">
+    <rect width="275" height="240" rx="18" fill="#16244A" stroke="#2A3B66"/>
+    <circle cx="34" cy="34" r="18" fill="#14B8A6"/><text class="num" x="34" y="40" text-anchor="middle">3</text>
+    <g transform="translate(78 54)" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="0" y="6" width="84" height="64" rx="9"/>
+      <rect x="96" y="0" width="40" height="76" rx="8"/>
+      <path d="M110 64h12" stroke="#7FE0D4"/>
+      <path d="M30 38h24" stroke="#7FE0D4"/>
+    </g>
+    <text class="title" x="137" y="180" text-anchor="middle">Install on the device</text>
+    <text class="sub" x="137" y="206" text-anchor="middle">Android · iPhone / iPad · or a browser</text>
+  </g>
+
+  <!-- Card 4 -->
+  <g transform="translate(975 30)">
+    <rect width="275" height="240" rx="18" fill="#16244A" stroke="#2A3B66"/>
+    <circle cx="34" cy="34" r="18" fill="#FF7A59"/><text class="num" x="34" y="40" text-anchor="middle">4</text>
+    <g transform="translate(88 50)" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="28" y="0" width="44" height="40" rx="6"/>
+      <path d="M40 0v-10M60 0v-10"/>
+      <path d="M50 40v18c0 14-12 22-26 22H0" stroke="#FFB199"/>
+      <circle cx="96" cy="72" r="14" stroke="#28C840"/>
+      <path d="M90 72l5 5 8-9" stroke="#28C840"/>
+    </g>
+    <text class="title" x="137" y="180" text-anchor="middle">Plug in — done</text>
+    <text class="sub" x="137" y="206" text-anchor="middle">or pair over Wi-Fi with a code</text>
+  </g>
+
+  <!-- Arrows -->
+  <g fill="#3A4D80">
+    <path d="M333 150l-22-10v20z"/>
+    <path d="M648 150l-22-10v20z"/>
+    <path d="M963 150l-22-10v20z"/>
+  </g>
+</svg>

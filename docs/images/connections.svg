@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="380" viewBox="0 0 1280 380" role="img" aria-labelledby="t d">
+  <title id="t">Three ways to connect</title>
+  <desc id="d">USB cable: lowest latency, Android and iPhone or iPad. Wi-Fi with the app: Android, iPhone, iPad, pair once. Browser: nothing to install, Windows, Linux, ChromeOS, Mac.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
+    .h { fill: #FFFFFF; font-size: 24px; font-weight: 800; }
+    .badge { fill: #FFFFFF; font-size: 13px; font-weight: 700; }
+    .row { fill: #DDE6FF; font-size: 15px; }
+    .muted { fill: #8EA2D6; font-size: 13px; }
+  </style>
+  <rect width="1280" height="380" rx="24" fill="#0F1A33"/>
+
+  <!-- USB -->
+  <g transform="translate(30 30)">
+    <rect width="390" height="320" rx="20" fill="#16244A" stroke="#2F6BFF" stroke-width="2"/>
+    <g transform="translate(28 30)" fill="none" stroke="#7FA6FF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="10" y="0" width="30" height="30" rx="5"/>
+      <path d="M18 0v-8M32 0v-8M25 30v20"/>
+    </g>
+    <text class="h" x="96" y="56">USB cable</text>
+    <rect x="96" y="70" width="150" height="26" rx="13" fill="#2F6BFF"/>
+    <text class="badge" x="171" y="88" text-anchor="middle">Lowest latency</text>
+    <text class="row" x="28" y="140">✓  Android phones and tablets</text>
+    <text class="row" x="28" y="170">✓  iPhone and iPad</text>
+    <text class="row" x="28" y="200">✓  ~30 ms, 60–120 fps, charges while you work</text>
+    <text class="muted" x="28" y="252">Android: turn on USB debugging once.</text>
+    <text class="muted" x="28" y="274">iPhone / iPad: open the app, plug in.</text>
+  </g>
+
+  <!-- Wi-Fi -->
+  <g transform="translate(445 30)">
+    <rect width="390" height="320" rx="20" fill="#16244A" stroke="#6A4CFF" stroke-width="2"/>
+    <g transform="translate(48 58)" fill="none" stroke="#B9A8FF" stroke-width="5" stroke-linecap="round">
+      <path d="M-26 0a37 37 0 0 1 52 0"/>
+      <path d="M-16 11a22 22 0 0 1 32 0"/>
+      <circle cx="0" cy="22" r="3" fill="#B9A8FF" stroke="none"/>
+    </g>
+    <text class="h" x="96" y="56">Wi-Fi + app</text>
+    <rect x="96" y="70" width="128" height="26" rx="13" fill="#6A4CFF"/>
+    <text class="badge" x="160" y="88" text-anchor="middle">No cable</text>
+    <text class="row" x="28" y="140">✓  Android phones and tablets</text>
+    <text class="row" x="28" y="170">✓  iPhone and iPad</text>
+    <text class="row" x="28" y="200">✓  Finds your Mac automatically</text>
+    <text class="muted" x="28" y="252">Pair once with the 6-digit code</text>
+    <text class="muted" x="28" y="274">the Mac shows. 5 GHz Wi-Fi works best.</text>
+  </g>
+
+  <!-- Browser -->
+  <g transform="translate(860 30)">
+    <rect width="390" height="320" rx="20" fill="#16244A" stroke="#FF7A59" stroke-width="2"/>
+    <g transform="translate(28 30)" fill="none" stroke="#FFB199" stroke-width="5" stroke-linecap="round">
+      <circle cx="24" cy="24" r="22"/>
+      <path d="M2 24h44M24 2c-12 14-12 30 0 44M24 2c12 14 12 30 0 44"/>
+    </g>
+    <text class="h" x="96" y="56">Any browser</text>
+    <rect x="96" y="70" width="158" height="26" rx="13" fill="#FF7A59"/>
+    <text class="badge" x="175" y="88" text-anchor="middle">Nothing to install</text>
+    <text class="row" x="28" y="140">✓  Windows, Linux, ChromeOS, Mac</text>
+    <text class="row" x="28" y="170">✓  Any phone or tablet browser</text>
+    <text class="row" x="28" y="200">✓  Touch, mouse and keyboard</text>
+    <text class="muted" x="28" y="252">Scan the QR code in the Mac's menu,</text>
+    <text class="muted" x="28" y="274">or type the address it shows.</text>
+  </g>
+</svg>
