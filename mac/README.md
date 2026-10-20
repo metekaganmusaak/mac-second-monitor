@@ -73,5 +73,5 @@ raises it again once the link is calm.
 ## Localization
 
 All strings live in [`Sources/MSMHost/Resources/Localizable.xcstrings`](Sources/MSMHost/Resources/Localizable.xcstrings)
-(English and Turkish) and are read with `L10n.tr("key")`. `swift build` copies the catalog as-is,
+(12 languages) and are read with `L10n.tr("key")`. `swift build` copies the catalog as-is,
 so `L10n` reads it directly during development; `build-app.sh` compiles it into `.lproj` tables.

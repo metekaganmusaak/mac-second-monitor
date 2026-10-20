@@ -25,8 +25,9 @@ the network; clients decode it and send touch / keyboard input back.
   (`StreamPipeline.maxFramesInFlight`) and "latest frame wins" must stay intact; clients must ACK
   every frame and render only the newest one.
 - **No user-facing string literals.** macOS: `L10n.tr("key")` + `Localizable.xcstrings`;
-  Android: `strings.xml` (+ `values-tr`); iOS: String Catalog; web: `src/i18n/*.json`. Every new
-  string needs English **and** Turkish.
+  Android: `strings.xml` (+ `values-<lang>`); iOS: String Catalog; web: `src/i18n/*.json`. Every
+  app ships 12 languages (en, tr, de, es, fr, it, pt-BR, ru, zh, ja, ko, ar — Arabic is RTL): a new
+  string needs all of them, with the same placeholders.
 - Swift is in Swift 6 language mode. Mutable state lives on one serial queue per object
   (`@unchecked Sendable` + queue confinement) or on the main actor for UI. Never `queue.sync`
   onto a session queue from a callback that may already run on it (`HostEngine.notify()` exists

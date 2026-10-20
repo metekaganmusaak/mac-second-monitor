@@ -133,6 +133,13 @@ import Testing
         #expect(accepted)
     }
 
+    @Test func pairingCodesAcceptOtherDigitScripts() {
+        #expect(PairingCode.asciiDigits("٤٨٢٩١٣") == "482913")
+        #expect(PairingCode.asciiDigits("４８２ ９１３") == "482913")
+        #expect(PairingCode.asciiDigits("48-29-13") == "482913")
+        #expect(PairingCode.asciiDigits("½Ⅻ") == "")
+    }
+
     @Test func bitrateStaysInBounds() {
         let usb = StreamQuality.balanced.bitrate(width: 2560, height: 1600, fps: 60, wired: true)
         let wifi = StreamQuality.balanced.bitrate(width: 2560, height: 1600, fps: 60, wired: false)

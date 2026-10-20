@@ -210,12 +210,19 @@ struct PairingCode {
 
     /// Returns true on a match; otherwise consumes an attempt.
     mutating func verify(_ candidate: String) -> Bool {
-        let trimmed = candidate.filter(\.isNumber)
-        if TrustStore.constantTimeEquals(trimmed, value) {
+        if TrustStore.constantTimeEquals(Self.asciiDigits(candidate), value) {
             return true
         }
         attemptsLeft -= 1
         return false
+    }
+
+    /// Keyboards in some languages type other digits (Arabic-Indic ٤٨٢, full-width ４８２).
+    static func asciiDigits(_ text: String) -> String {
+        String(text.compactMap { character in
+            guard character.isNumber, let digit = character.wholeNumberValue, (0...9).contains(digit) else { return nil }
+            return Character(String(digit))
+        })
     }
 }
 

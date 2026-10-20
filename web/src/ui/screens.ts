@@ -1,5 +1,6 @@
-import { plural, t } from '../i18n';
+import { currentLanguage, plural, t } from '../i18n';
 import type { PairRequest } from '../protocol';
+import { asciiDigits } from './digits';
 import { h } from './dom';
 
 export interface ScreenAction {
@@ -110,7 +111,7 @@ class PairingForm {
     });
     this.button = h('button', { className: 'button primary', text: t('pairing.submit'), attrs: { type: 'submit' } });
     this.input.addEventListener('input', () => {
-      const digits = this.input.value.replace(/\D/g, '').slice(0, this.codeLength);
+      const digits = asciiDigits(this.input.value).slice(0, this.codeLength);
       if (digits !== this.input.value) this.input.value = digits;
       this.button.disabled = digits.length !== this.codeLength;
       if (digits.length === this.codeLength) this.send();
@@ -128,7 +129,7 @@ class PairingForm {
     this.input.placeholder = '•'.repeat(request.codeLength);
     this.message.textContent = t('pairing.message', { length: request.codeLength });
     this.error.textContent = request.retry
-      ? `${t('pairing.wrongCode')} ${plural('pairing.attemptsLeft', request.attemptsLeft)}`
+      ? [t('pairing.wrongCode'), plural('pairing.attemptsLeft', request.attemptsLeft)].join(sentenceSeparator())
       : '';
     this.input.value = '';
     this.input.disabled = false;
@@ -145,4 +146,9 @@ class PairingForm {
     this.button.textContent = t('pairing.checking');
     this.submit(code);
   }
+}
+
+/** Chinese and Japanese sentences end in 。 and are not followed by a space. */
+function sentenceSeparator(): string {
+  return /^(ja|zh)/.test(currentLanguage()) ? '' : ' ';
 }

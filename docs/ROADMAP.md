@@ -55,7 +55,7 @@ the same Mac ≈ 23 ms median with a real virtual display; Android emulator over
 - ✅ Pairing: 6-digit code, three attempts, remembered trusted devices (token hashes only)
 - 🟡 Input injection via `CGEvent`: pointer, click counting, drag, trackpad-style scroll, keys, text (mapping unit-tested; posting needs the Accessibility grant, not exercised in automated tests)
 - ✅ Permission onboarding (Screen Recording, Accessibility)
-- ✅ Localization: String Catalog, English + Turkish
+- ✅ Localization: String Catalog, 12 languages
 
 **Exit ✅:** the host runs from the menu bar, advertises itself and serves streams to test clients.
 
@@ -69,7 +69,7 @@ the same Mac ≈ 23 ms median with a real virtual display; Android emulator over
 - ✅ Reports native resolution / DPI / refresh rate so the host sizes the virtual display
 - ✅ Reconnect on network loss (incl. a silence timeout), keyframe request on decoder errors
 - ✅ Statistics overlay (fps, latency, RTT, bitrate, decoder)
-- ✅ Localization: `strings.xml`, English + Turkish, per-app language setting
+- ✅ Localization: `strings.xml`, 12 languages, per-app language setting
 - 🟡 Signed release APK: `assembleRelease` + release workflow (needs the signing secrets)
 
 **Exit 🟡:** verified end-to-end in the Android emulator; to be confirmed on a physical tablet over 5 GHz Wi-Fi.
@@ -91,7 +91,7 @@ at ~15–22 ms; to be confirmed on a physical tablet.
 - 🟡 USB via usbmux: the app listens on port 7100, the host's `UsbmuxBridge` connects through `usbmuxd` (protocol verified against the real daemon; no device tested)
 - ✅ Automatic transport selection (a USB connection takes over)
 - 🟡 Touch, Apple Pencil (pressure / hover), trackpad / mouse and hardware keyboard
-- ✅ Localization: String Catalog, English + Turkish
+- ✅ Localization: String Catalog, 12 languages
 
 **Exit 🟡:** verified in the iPad simulator over TCP; USB and Pencil need a real device.
 
@@ -101,7 +101,7 @@ at ~15–22 ms; to be confirmed on a physical tablet.
 - ✅ WebCodecs on secure contexts (localhost / HTTPS), MSE / ManagedMediaSource fallback on plain HTTP
 - ✅ Full screen, wake lock, pointer + touch + pen + keyboard + soft keyboard input
 - ✅ "Add to Home Screen" (PWA manifest, Apple meta tags)
-- ✅ Localization: JSON catalogs, English + Turkish, browser-language detection, `?lang=` override
+- ✅ Localization: JSON catalogs, 12 languages, browser-language detection, `?lang=` override
 - 🟡 Tested on Chrome (macOS). Safari (macOS / iPadOS / iOS), Edge, Firefox and Huawei Browser still to test
 - ⬜ HTTPS with a local certificate, so LAN browsers get WebCodecs (lower latency than MSE)
 

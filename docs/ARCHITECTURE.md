@@ -104,7 +104,7 @@ Rules:
 | --- | --- | --- |
 | macOS | String Catalog, read through `L10n` | `mac/Sources/MSMHost/Resources/Localizable.xcstrings` |
 | iOS | String Catalog | `ios/MacSecondMonitorClient/Resources/Localizable.xcstrings` |
-| Android | Resources | `android/app/src/main/res/values/strings.xml`, `values-tr/strings.xml` |
-| Web | JSON catalogs | `web/src/i18n/en.json`, `tr.json` |
+| Android | Resources | `android/app/src/main/res/values/strings.xml`, `values-<lang>/strings.xml` |
+| Web | JSON catalogs | `web/src/i18n/<lang>.json` |
 
 Adding a language means adding translations to these files; no code changes.

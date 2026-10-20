@@ -79,7 +79,11 @@ struct PairingSheet: View {
     }
 
     private func codeChanged(_ value: String) {
-        let digits = String(value.filter { $0.isASCII && $0.isNumber }.prefix(prompt.codeLength))
+        // Arabic and other keyboards type non-ASCII digits; send them as 0–9.
+        let digits = String(value.compactMap { character -> Character? in
+            guard character.isNumber, let digit = character.wholeNumberValue, (0...9).contains(digit) else { return nil }
+            return Character(String(digit))
+        }.prefix(prompt.codeLength))
         if digits != value {
             code = digits
             return

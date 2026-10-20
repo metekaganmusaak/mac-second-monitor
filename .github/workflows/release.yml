@@ -1,9 +1,14 @@
 name: Release
 
-# Push a tag like v0.1.0 to build and publish all apps.
+# Builds the DMG and APK for an existing tag and attaches them to a draft release.
+# Run it from Actions → Release → Run workflow (releases can also be built locally with
+# mac/scripts/build-app.sh; see CHANGELOG.md for the release checklist).
 on:
-  push:
-    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag to build, e.g. v0.2.0"
+        required: true
 
 permissions:
   contents: write
@@ -16,6 +21,8 @@ jobs:
         working-directory: android
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.tag }}
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
@@ -28,13 +35,14 @@ jobs:
           MSM_ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
           MSM_ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
           MSM_ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+          TAG: ${{ inputs.tag }}
         run: |
           if [ -n "$KEYSTORE_BASE64" ]; then
             echo "$KEYSTORE_BASE64" | base64 --decode > "$RUNNER_TEMP/release.jks"
             export MSM_ANDROID_KEYSTORE="$RUNNER_TEMP/release.jks"
           fi
           ./gradlew assembleRelease
-          cp app/build/outputs/apk/release/app-release.apk "$RUNNER_TEMP/MacSecondMonitor-${GITHUB_REF_NAME}.apk"
+          cp app/build/outputs/apk/release/app-release.apk "$RUNNER_TEMP/MacSecondMonitor-${TAG#v}.apk"
       - uses: actions/upload-artifact@v4
         with:
           name: android
@@ -47,6 +55,8 @@ jobs:
         working-directory: web
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.tag }}
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -61,6 +71,8 @@ jobs:
     runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.tag }}
       - uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: latest-stable
@@ -73,10 +85,13 @@ jobs:
           name: android
           path: android/app/build/outputs/apk/release
       - name: Build app and DMG
+        env:
+          TAG: ${{ inputs.tag }}
         run: |
-          VERSION="${GITHUB_REF_NAME#v}" BUILD="${GITHUB_RUN_NUMBER}" SIGN_IDENTITY="-" DMG=1 mac/scripts/build-app.sh
+          VERSION="${TAG#v}" BUILD="${GITHUB_RUN_NUMBER}" SIGN_IDENTITY="-" DMG=1 mac/scripts/build-app.sh
       - uses: softprops/action-gh-release@v2
         with:
+          tag_name: ${{ inputs.tag }}
           draft: true
           files: |
             mac/build/MacSecondMonitor-*.dmg

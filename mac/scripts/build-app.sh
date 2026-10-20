@@ -35,7 +35,7 @@ cp -R "$BIN/MacSecondMonitor_MSMHost.bundle" "$BUNDLE"
 xcrun xcstringstool compile "$BUNDLE/Localizable.xcstrings" --output-directory "$BUNDLE"
 rm "$BUNDLE/Localizable.xcstrings"
 # Main-bundle localizations tell macOS which languages the app supports.
-for language in en tr; do
+for language in en tr de es fr it pt-BR ru zh-Hans ja ko ar; do
     mkdir -p "$APP/Contents/Resources/$language.lproj"
 done
 
@@ -46,7 +46,11 @@ else
     echo "    (web client not built; run 'npm run build' in web/ to bundle it)"
 fi
 
-APK="$(ls -t "$ROOT"/android/app/build/outputs/apk/release/*.apk "$ROOT"/android/app/build/outputs/apk/debug/*.apk 2>/dev/null | head -1 || true)"
+# Prefer a release APK; fall back to the newest debug build.
+APK="$(ls -t "$ROOT"/android/app/build/outputs/apk/release/*.apk 2>/dev/null | head -1 || true)"
+if [ -z "$APK" ]; then
+    APK="$(ls -t "$ROOT"/android/app/build/outputs/apk/debug/*.apk 2>/dev/null | head -1 || true)"
+fi
 if [ -n "$APK" ]; then
     echo "==> Bundling Android client ($(basename "$APK"))"
     mkdir -p "$APP/Contents/Resources/android"

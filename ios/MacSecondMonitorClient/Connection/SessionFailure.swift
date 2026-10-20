@@ -27,6 +27,9 @@ struct SessionFailure: Identifiable, Equatable {
         case .unsupportedProtocol: text = String(localized: "error.unsupportedProtocol")
         case .displayUnavailable: text = String(localized: "error.displayUnavailable")
         case .rejected: text = String(localized: "error.rejected")
+        case .pairingUnavailable:
+            // Says how long pairing is paused; only the host knows.
+            text = message.isEmpty ? String(localized: "error.unknown") : message
         case .internalError, nil:
             text = message.isEmpty ? String(localized: "error.unknown") : L10n.format(String(localized: "error.internal"), message)
         }

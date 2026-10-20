@@ -21,7 +21,7 @@ synthetic image and `swift run msm probe` is a complete test client. See
 - **Protocol changes** start in [docs/PROTOCOL.md](docs/PROTOCOL.md) and land in every client in
   the same pull request, with byte-layout tests on each side.
 - **Keep the video path queue-free.** Skipping a frame is fine; buffering one is not.
-- **Localize everything.** No user-facing string literals in code. Add English and Turkish for
+- **Localize everything.** No user-facing string literals in code. Add all 12 languages for
   every new string ([how](docs/ARCHITECTURE.md#localization)).
 - **Match the surrounding code**: naming, file layout and comment density. Comments explain *why*,
   not *what*.
