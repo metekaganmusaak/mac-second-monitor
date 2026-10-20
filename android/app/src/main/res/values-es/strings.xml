@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Connect screen -->
+    <string name="connect_subtitle">Usa este dispositivo como pantalla de tu Mac.</string>
+    <string name="connect_settings">Ajustes</string>
+    <string name="connect_usb_title">Cable USB</string>
+    <string name="connect_usb_searching">Buscando tu Mac por USB…</string>
+    <string name="connect_usb_ready">Mac encontrado por USB. Latencia mínima.</string>
+    <string name="connect_usb_absent">Conecta el cable y abre Mac Second Monitor en el Mac.</string>
+    <string name="connect_usb_help">Cómo configurar el USB</string>
+    <string name="connect_usb_help_body">1. En este dispositivo, abre Ajustes → Información de la tablet/del teléfono y toca «Número de compilación» siete veces para activar las Opciones para desarrolladores.\n2. En Ajustes → Sistema → Opciones para desarrolladores, activa «Depuración por USB» (en dispositivos HUAWEI, activa también «Permitir depuración ADB en modo solo carga»).\n3. Conecta el cable al Mac y permite la depuración por USB cuando se te pida.\n4. Abre Mac Second Monitor en el Mac. Esta aplicación se abrirá y se conectará sola.</string>
+    <string name="connect_button">Conectar</string>
+    <string name="connect_network_title">En esta red</string>
+    <string name="connect_network_searching">Buscando Mac en esta red Wi-Fi…</string>
+    <string name="connect_recent_title">Recientes</string>
+    <string name="connect_manual_title">Conectar por dirección</string>
+    <string name="connect_manual_hint">Dirección IP del Mac</string>
+    <string name="connect_manual_invalid">Introduce una dirección IP o un nombre de host.</string>
+    <string name="connect_host_detail">%1$s · puerto %2$d</string>
+
+    <!-- Stream -->
+    <string name="stream_connecting">Conectando con %1$s…</string>
+    <string name="stream_starting">Iniciando la pantalla…</string>
+    <string name="stream_reconnecting">Se ha perdido la conexión. Reconectando…</string>
+    <string name="stream_disconnected">Desconectado</string>
+    <string name="stream_mac">tu Mac</string>
+    <string name="stream_usb">USB</string>
+    <string name="stream_wifi">Wi-Fi</string>
+    <string name="stream_retry">Reintentar</string>
+    <string name="stream_back">Atrás</string>
+    <string name="stream_menu">Menú</string>
+    <string name="stream_menu_keyboard">Teclado</string>
+    <string name="stream_menu_stats">Mostrar estadísticas</string>
+    <string name="stream_menu_disconnect">Desconectar</string>
+    <string name="stream_exit_title">¿Desconectar del Mac?</string>
+    <string name="stream_exit_message">La pantalla adicional desaparecerá de tu Mac.</string>
+    <string name="stream_stats">%1$.0f fps · %2$s · RTT %3$s · %4$.1f Mbps · %5$s</string>
+    <string name="stream_stats_latency">%1$.0f ms</string>
+    <string name="stream_stats_unknown">–</string>
+
+    <!-- Pairing -->
+    <string name="pairing_title">Emparejar con %1$s</string>
+    <string name="pairing_message">Introduce el código de 6 dígitos que aparece en tu Mac.</string>
+    <string name="pairing_button">Emparejar</string>
+    <string name="pairing_cancel">Cancelar</string>
+
+    <!-- Errors from the host -->
+    <string name="error_permission_missing">El Mac necesita permiso de grabación de pantalla. En el Mac, permite Mac Second Monitor en Ajustes del Sistema → Privacidad y seguridad → Grabación de pantalla y vuelve a intentarlo.</string>
+    <string name="error_pairing_failed">El código de emparejamiento no era correcto. Vuelve a intentarlo para obtener un código nuevo.</string>
+    <string name="error_pairing_timeout">Se ha agotado el tiempo de emparejamiento. Vuelve a intentarlo para obtener un código nuevo.</string>
+    <string name="error_unsupported_protocol">Esta aplicación y la del Mac no son compatibles. Actualiza ambas a la última versión.</string>
+    <string name="error_display_unavailable">El Mac no ha podido iniciar la pantalla.</string>
+    <string name="error_rejected">El Mac ha rechazado la conexión.</string>
+    <string name="error_replaced">Este dispositivo se ha vuelto a conectar desde otra sesión.</string>
+    <string name="error_network">No se ha podido conectar con el Mac (%1$s).</string>
+    <string name="error_generic">Se ha producido un error: %1$s</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Ajustes</string>
+    <string name="settings_display">Pantalla</string>
+    <string name="settings_show_stats">Mostrar estadísticas</string>
+    <string name="settings_show_stats_summary">Fotogramas por segundo, latencia y tasa de bits sobre la imagen</string>
+    <string name="settings_menu_button">Mostrar botón de menú</string>
+    <string name="settings_menu_button_summary">Un pequeño botón en el borde derecho. Tocar con tres dedos también abre el menú.</string>
+    <string name="settings_input">Táctil y teclado</string>
+    <string name="settings_one_finger_scroll">Desplazar con un dedo</string>
+    <string name="settings_one_finger_scroll_summary">Como en una pantalla táctil. Si está desactivado, un dedo arrastra y dos dedos desplazan.</string>
+    <string name="settings_swap_ctrl_cmd">Usar Ctrl como ⌘ Comando</string>
+    <string name="settings_swap_ctrl_cmd_summary">Para teclados de PC: Ctrl+C copia en el Mac</string>
+    <string name="settings_connection">Conexión</string>
+    <string name="settings_auto_usb">Conectar automáticamente por USB</string>
+    <string name="settings_auto_usb_summary">Iniciar la pantalla en cuanto se conecte el cable</string>
+    <string name="settings_forget">Olvidar los Mac emparejados</string>
+    <string name="settings_forget_summary">Las conexiones Wi-Fi pedirán un nuevo código de emparejamiento</string>
+    <string name="settings_forget_done">Se han olvidado los Mac emparejados</string>
+    <string name="settings_general">General</string>
+    <string name="settings_language">Idioma</string>
+    <string name="settings_language_system">Idioma del sistema</string>
+    <string name="settings_version">Versión</string>
+    <plurals name="pairing_retry">
+        <item quantity="one">Código incorrecto. Te queda %1$d intento.</item>
+        <item quantity="many">Código incorrecto. Te quedan %1$d de intentos.</item>
+        <item quantity="other">Código incorrecto. Te quedan %1$d intentos.</item>
+    </plurals>
+</resources>

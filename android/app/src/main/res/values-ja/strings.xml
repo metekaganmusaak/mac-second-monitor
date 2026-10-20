@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Connect screen -->
+    <string name="connect_subtitle">このデバイスを Mac のディスプレイとして使用します。</string>
+    <string name="connect_settings">設定</string>
+    <string name="connect_usb_title">USB ケーブル</string>
+    <string name="connect_usb_searching">USB で Mac を探しています…</string>
+    <string name="connect_usb_ready">USB で Mac が見つかりました。遅延が最小です。</string>
+    <string name="connect_usb_absent">ケーブルを接続して、Mac で Mac Second Monitor を開いてください。</string>
+    <string name="connect_usb_help">USB の設定方法</string>
+    <string name="connect_usb_help_body">1. このデバイスで [設定] → [タブレット情報]（または [デバイス情報]）を開き、[ビルド番号] を 7 回タップして開発者向けオプションを有効にします。\n2. [設定] → [システム] → [開発者向けオプション] で [USB デバッグ] をオンにします（HUAWEI デバイスでは [充電専用モードでADBデバッグを許可する] もオンにします）。\n3. ケーブルを Mac に接続し、確認が表示されたら USB デバッグを許可します。\n4. Mac で Mac Second Monitor を開きます。このアプリが自動的に起動して接続します。</string>
+    <string name="connect_button">接続</string>
+    <string name="connect_network_title">このネットワーク</string>
+    <string name="connect_network_searching">この Wi-Fi ネットワークで Mac を検索しています…</string>
+    <string name="connect_recent_title">最近の接続</string>
+    <string name="connect_manual_title">アドレスで接続</string>
+    <string name="connect_manual_hint">Mac の IP アドレス</string>
+    <string name="connect_manual_invalid">IP アドレスまたはホスト名を入力してください。</string>
+    <string name="connect_host_detail">%1$s · ポート %2$d</string>
+
+    <!-- Stream -->
+    <string name="stream_connecting">%1$s に接続しています…</string>
+    <string name="stream_starting">ディスプレイを起動しています…</string>
+    <string name="stream_reconnecting">接続が切断されました。再接続しています…</string>
+    <string name="stream_disconnected">切断されました</string>
+    <string name="stream_mac">Mac</string>
+    <string name="stream_usb">USB</string>
+    <string name="stream_wifi">Wi-Fi</string>
+    <string name="stream_retry">再試行</string>
+    <string name="stream_back">戻る</string>
+    <string name="stream_menu">メニュー</string>
+    <string name="stream_menu_keyboard">キーボード</string>
+    <string name="stream_menu_stats">統計情報を表示</string>
+    <string name="stream_menu_disconnect">切断</string>
+    <string name="stream_exit_title">Mac との接続を切断しますか？</string>
+    <string name="stream_exit_message">追加のディスプレイが Mac から削除されます。</string>
+    <string name="stream_stats">%1$.0f fps · %2$s · RTT %3$s · %4$.1f Mbps · %5$s</string>
+    <string name="stream_stats_latency">%1$.0f ms</string>
+    <string name="stream_stats_unknown">–</string>
+
+    <!-- Pairing -->
+    <string name="pairing_title">%1$s とペア設定</string>
+    <string name="pairing_message">Mac に表示されている 6 桁のコードを入力してください。</string>
+    <string name="pairing_button">ペア設定</string>
+    <string name="pairing_cancel">キャンセル</string>
+
+    <!-- Errors from the host -->
+    <string name="error_permission_missing">Mac で画面収録の許可が必要です。Mac の [システム設定] → [プライバシーとセキュリティ] → [画面収録] で Mac Second Monitor を許可してから、もう一度お試しください。</string>
+    <string name="error_pairing_failed">ペア設定コードが正しくありません。もう一度お試しいただくと、新しいコードが表示されます。</string>
+    <string name="error_pairing_timeout">ペア設定がタイムアウトしました。もう一度お試しいただくと、新しいコードが表示されます。</string>
+    <string name="error_unsupported_protocol">このアプリと Mac アプリには互換性がありません。両方を最新バージョンに更新してください。</string>
+    <string name="error_display_unavailable">Mac でディスプレイを起動できませんでした。</string>
+    <string name="error_rejected">Mac が接続を拒否しました。</string>
+    <string name="error_replaced">このデバイスは別のセッションから再接続されました。</string>
+    <string name="error_network">Mac に接続できませんでした（%1$s）。</string>
+    <string name="error_generic">問題が発生しました: %1$s</string>
+
+    <!-- Settings -->
+    <string name="settings_title">設定</string>
+    <string name="settings_display">ディスプレイ</string>
+    <string name="settings_show_stats">統計情報を表示</string>
+    <string name="settings_show_stats_summary">フレームレート、遅延、ビットレートを映像の上に表示します</string>
+    <string name="settings_menu_button">メニューボタンを表示</string>
+    <string name="settings_menu_button_summary">右端に小さなボタンを表示します。3 本の指でタップしてもメニューが開きます。</string>
+    <string name="settings_input">タッチとキーボード</string>
+    <string name="settings_one_finger_scroll">1 本の指でスクロール</string>
+    <string name="settings_one_finger_scroll_summary">タッチスクリーンと同じ操作です。オフの場合は 1 本の指でドラッグ、2 本の指でスクロールします。</string>
+    <string name="settings_swap_ctrl_cmd">Ctrl を ⌘ Command として使用</string>
+    <string name="settings_swap_ctrl_cmd_summary">PC キーボード向け: Ctrl+C で Mac 上でコピーします</string>
+    <string name="settings_connection">接続</string>
+    <string name="settings_auto_usb">USB で自動的に接続</string>
+    <string name="settings_auto_usb_summary">ケーブルを接続したらすぐにディスプレイを起動します</string>
+    <string name="settings_forget">ペア設定した Mac を削除</string>
+    <string name="settings_forget_summary">Wi-Fi で接続するときに新しいペア設定コードが必要になります</string>
+    <string name="settings_forget_done">ペア設定した Mac を削除しました</string>
+    <string name="settings_general">全般</string>
+    <string name="settings_language">言語</string>
+    <string name="settings_language_system">システムの言語</string>
+    <string name="settings_version">バージョン</string>
+    <plurals name="pairing_retry">
+        <item quantity="other">コードが正しくありません。残り %1$d 回です。</item>
+    </plurals>
+</resources>

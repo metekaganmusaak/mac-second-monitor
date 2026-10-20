@@ -44,8 +44,13 @@ class SettingsActivity : AppCompatActivity() {
             findPreference<ListPreference>(AppSettings.PREF_LANGUAGE)?.apply {
                 entryValues = resources.getStringArray(R.array.language_values)
                 entries = arrayOf(getString(R.string.settings_language_system)) + resources.getStringArray(R.array.language_native_names)
-                val current = AppCompatDelegate.getApplicationLocales().toLanguageTags()
-                value = if (current.isEmpty()) "system" else current.substringBefore('-')
+                // Exact tag first (pt-BR, zh-CN), then the bare language (tr-TR → tr).
+                val current = AppCompatDelegate.getApplicationLocales()[0]?.toLanguageTag()
+                val values = entryValues.map { it.toString() }
+                value = current?.let { tag ->
+                    values.firstOrNull { it.equals(tag, ignoreCase = true) }
+                        ?: values.firstOrNull { it.substringBefore('-').equals(tag.substringBefore('-'), ignoreCase = true) }
+                } ?: "system"
                 setOnPreferenceChangeListener { _, newValue ->
                     val tag = newValue as String
                     AppCompatDelegate.setApplicationLocales(
@@ -68,7 +73,8 @@ class SettingsActivity : AppCompatActivity() {
                 true
             }
 
-            findPreference<Preference>(AppSettings.PREF_VERSION)?.summary = BuildConfig.VERSION_NAME
+            // Left-to-right mark: keeps "0.1.0" in one piece in right-to-left languages.
+            findPreference<Preference>(AppSettings.PREF_VERSION)?.summary = "\u200E" + BuildConfig.VERSION_NAME
         }
     }
 }

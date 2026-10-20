@@ -42,6 +42,16 @@ private struct GeneralSettings: View {
                 Text(L10n.tr("settings.language.system")).tag("system")
                 Text(verbatim: "English").tag("en")
                 Text(verbatim: "Türkçe").tag("tr")
+                Text(verbatim: "Deutsch").tag("de")
+                Text(verbatim: "Español").tag("es")
+                Text(verbatim: "Français").tag("fr")
+                Text(verbatim: "Italiano").tag("it")
+                Text(verbatim: "Português (Brasil)").tag("pt-BR")
+                Text(verbatim: "Русский").tag("ru")
+                Text(verbatim: "简体中文").tag("zh-Hans")
+                Text(verbatim: "日本語").tag("ja")
+                Text(verbatim: "한국어").tag("ko")
+                Text(verbatim: "العربية").tag("ar")
             }
             .onChange(of: language) { _, value in
                 guard value != (settings.language ?? "system") else { return }

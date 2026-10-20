@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Connect screen -->
+    <string name="connect_subtitle">Usa questo dispositivo come schermo per il tuo Mac.</string>
+    <string name="connect_settings">Impostazioni</string>
+    <string name="connect_usb_title">Cavo USB</string>
+    <string name="connect_usb_searching">Ricerca del Mac tramite USB…</string>
+    <string name="connect_usb_ready">Mac trovato tramite USB. Latenza minima.</string>
+    <string name="connect_usb_absent">Collega il cavo e apri Mac Second Monitor sul Mac.</string>
+    <string name="connect_usb_help">Come configurare l’USB</string>
+    <string name="connect_usb_help_body">1. Su questo dispositivo apri Impostazioni → Informazioni sul tablet/sullo smartphone e tocca sette volte «Numero build» per attivare le Opzioni sviluppatore.\n2. In Impostazioni → Sistema → Opzioni sviluppatore attiva «Debug USB» (sui dispositivi HUAWEI attiva anche «Consenti debug ADB solo in carica»).\n3. Collega il cavo al Mac e consenti il debug USB quando richiesto.\n4. Apri Mac Second Monitor sul Mac. Questa app si apre e si connette da sola.</string>
+    <string name="connect_button">Connetti</string>
+    <string name="connect_network_title">Su questa rete</string>
+    <string name="connect_network_searching">Ricerca di Mac su questa rete Wi-Fi…</string>
+    <string name="connect_recent_title">Recenti</string>
+    <string name="connect_manual_title">Connetti tramite indirizzo</string>
+    <string name="connect_manual_hint">Indirizzo IP del Mac</string>
+    <string name="connect_manual_invalid">Inserisci un indirizzo IP o un nome host.</string>
+    <string name="connect_host_detail">%1$s · porta %2$d</string>
+
+    <!-- Stream -->
+    <string name="stream_connecting">Connessione con %1$s…</string>
+    <string name="stream_starting">Avvio dello schermo…</string>
+    <string name="stream_reconnecting">Connessione persa. Riconnessione…</string>
+    <string name="stream_disconnected">Disconnesso</string>
+    <string name="stream_mac">il tuo Mac</string>
+    <string name="stream_usb">USB</string>
+    <string name="stream_wifi">Wi-Fi</string>
+    <string name="stream_retry">Riprova</string>
+    <string name="stream_back">Indietro</string>
+    <string name="stream_menu">Menu</string>
+    <string name="stream_menu_keyboard">Tastiera</string>
+    <string name="stream_menu_stats">Mostra statistiche</string>
+    <string name="stream_menu_disconnect">Disconnetti</string>
+    <string name="stream_exit_title">Disconnettersi dal Mac?</string>
+    <string name="stream_exit_message">Lo schermo aggiuntivo scomparirà dal tuo Mac.</string>
+    <string name="stream_stats">%1$.0f fps · %2$s · RTT %3$s · %4$.1f Mbps · %5$s</string>
+    <string name="stream_stats_latency">%1$.0f ms</string>
+    <string name="stream_stats_unknown">–</string>
+
+    <!-- Pairing -->
+    <string name="pairing_title">Accoppia con %1$s</string>
+    <string name="pairing_message">Inserisci il codice a 6 cifre mostrato sul tuo Mac.</string>
+    <string name="pairing_button">Accoppia</string>
+    <string name="pairing_cancel">Annulla</string>
+
+    <!-- Errors from the host -->
+    <string name="error_permission_missing">Il Mac richiede l’autorizzazione Registrazione schermo. Sul Mac, consenti Mac Second Monitor in Impostazioni di Sistema → Privacy e sicurezza → Registrazione schermo, quindi riprova.</string>
+    <string name="error_pairing_failed">Il codice di accoppiamento non era corretto. Riprova per ricevere un nuovo codice.</string>
+    <string name="error_pairing_timeout">Tempo scaduto per l’accoppiamento. Riprova per ricevere un nuovo codice.</string>
+    <string name="error_unsupported_protocol">Questa app e l’app per Mac non sono compatibili. Aggiornale entrambe all’ultima versione.</string>
+    <string name="error_display_unavailable">Il Mac non è riuscito ad avviare lo schermo.</string>
+    <string name="error_rejected">Il Mac ha rifiutato la connessione.</string>
+    <string name="error_replaced">Questo dispositivo si è riconnesso da un’altra sessione.</string>
+    <string name="error_network">Impossibile raggiungere il Mac (%1$s).</string>
+    <string name="error_generic">Si è verificato un problema: %1$s</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Impostazioni</string>
+    <string name="settings_display">Schermo</string>
+    <string name="settings_show_stats">Mostra statistiche</string>
+    <string name="settings_show_stats_summary">Frequenza fotogrammi, latenza e bitrate sopra l’immagine</string>
+    <string name="settings_menu_button">Mostra pulsante menu</string>
+    <string name="settings_menu_button_summary">Un piccolo pulsante sul bordo destro. Anche un tocco con tre dita apre il menu.</string>
+    <string name="settings_input">Tocco e tastiera</string>
+    <string name="settings_one_finger_scroll">Scorri con un dito</string>
+    <string name="settings_one_finger_scroll_summary">Come un touchscreen. Se disattivato, un dito trascina e due dita scorrono.</string>
+    <string name="settings_swap_ctrl_cmd">Usa Ctrl come ⌘ Comando</string>
+    <string name="settings_swap_ctrl_cmd_summary">Per tastiere PC: Ctrl+C copia sul Mac</string>
+    <string name="settings_connection">Connessione</string>
+    <string name="settings_auto_usb">Connetti automaticamente tramite USB</string>
+    <string name="settings_auto_usb_summary">Avvia lo schermo appena il cavo viene collegato</string>
+    <string name="settings_forget">Dimentica i Mac accoppiati</string>
+    <string name="settings_forget_summary">Le connessioni Wi-Fi chiederanno un nuovo codice di accoppiamento</string>
+    <string name="settings_forget_done">Mac accoppiati dimenticati</string>
+    <string name="settings_general">Generali</string>
+    <string name="settings_language">Lingua</string>
+    <string name="settings_language_system">Lingua di sistema</string>
+    <string name="settings_version">Versione</string>
+    <plurals name="pairing_retry">
+        <item quantity="one">Codice errato. Ti resta %1$d tentativo.</item>
+        <item quantity="many">Codice errato. Ti restano %1$d di tentativi.</item>
+        <item quantity="other">Codice errato. Ti restano %1$d tentativi.</item>
+    </plurals>
+</resources>

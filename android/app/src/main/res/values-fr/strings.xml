@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- \u00A0 = no-break space before French high punctuation and inside « ». -->
+
+    <!-- Connect screen -->
+    <string name="connect_subtitle">Utilisez cet appareil comme écran pour votre Mac.</string>
+    <string name="connect_settings">Paramètres</string>
+    <string name="connect_usb_title">Câble USB</string>
+    <string name="connect_usb_searching">Recherche de votre Mac via USB…</string>
+    <string name="connect_usb_ready">Mac détecté via USB. Latence minimale.</string>
+    <string name="connect_usb_absent">Branchez le câble et ouvrez Mac Second Monitor sur le Mac.</string>
+    <string name="connect_usb_help">Comment configurer l’USB</string>
+    <string name="connect_usb_help_body">1. Sur cet appareil, ouvrez Paramètres → À propos de la tablette/du téléphone, puis appuyez sept fois sur «\u00A0Numéro de build\u00A0» pour activer les Options pour les développeurs.\n2. Dans Paramètres → Système → Options pour les développeurs, activez «\u00A0Débogage USB\u00A0» (sur les appareils HUAWEI, activez aussi «\u00A0Débogage ADB en mode Charger uniquement\u00A0»).\n3. Branchez le câble sur le Mac et autorisez le débogage USB lorsque vous y êtes invité.\n4. Ouvrez Mac Second Monitor sur le Mac. Cette application s’ouvre et se connecte automatiquement.</string>
+    <string name="connect_button">Connecter</string>
+    <string name="connect_network_title">Sur ce réseau</string>
+    <string name="connect_network_searching">Recherche de Mac sur ce réseau Wi-Fi…</string>
+    <string name="connect_recent_title">Récents</string>
+    <string name="connect_manual_title">Connexion par adresse</string>
+    <string name="connect_manual_hint">Adresse IP du Mac</string>
+    <string name="connect_manual_invalid">Saisissez une adresse IP ou un nom d’hôte.</string>
+    <string name="connect_host_detail">%1$s · port %2$d</string>
+
+    <!-- Stream -->
+    <string name="stream_connecting">Connexion à %1$s…</string>
+    <string name="stream_starting">Démarrage de l’écran…</string>
+    <string name="stream_reconnecting">Connexion perdue. Reconnexion…</string>
+    <string name="stream_disconnected">Déconnecté</string>
+    <string name="stream_mac">votre Mac</string>
+    <string name="stream_usb">USB</string>
+    <string name="stream_wifi">Wi-Fi</string>
+    <string name="stream_retry">Réessayer</string>
+    <string name="stream_back">Retour</string>
+    <string name="stream_menu">Menu</string>
+    <string name="stream_menu_keyboard">Clavier</string>
+    <string name="stream_menu_stats">Afficher les statistiques</string>
+    <string name="stream_menu_disconnect">Déconnecter</string>
+    <string name="stream_exit_title">Se déconnecter du Mac\u00A0?</string>
+    <string name="stream_exit_message">L’écran supplémentaire disparaîtra de votre Mac.</string>
+    <string name="stream_stats">%1$.0f fps · %2$s · RTT %3$s · %4$.1f Mbit/s · %5$s</string>
+    <string name="stream_stats_latency">%1$.0f ms</string>
+    <string name="stream_stats_unknown">–</string>
+
+    <!-- Pairing -->
+    <string name="pairing_title">Associer à %1$s</string>
+    <string name="pairing_message">Saisissez le code à 6 chiffres affiché sur votre Mac.</string>
+    <string name="pairing_button">Associer</string>
+    <string name="pairing_cancel">Annuler</string>
+
+    <!-- Errors from the host -->
+    <string name="error_permission_missing">Le Mac a besoin de l’autorisation d’enregistrement de l’écran. Sur le Mac, autorisez Mac Second Monitor dans Réglages Système → Confidentialité et sécurité → Enregistrement de l’écran, puis réessayez.</string>
+    <string name="error_pairing_failed">Le code d’association était incorrect. Réessayez pour obtenir un nouveau code.</string>
+    <string name="error_pairing_timeout">Le délai d’association a expiré. Réessayez pour obtenir un nouveau code.</string>
+    <string name="error_unsupported_protocol">Cette application et l’app Mac ne sont pas compatibles. Mettez-les toutes les deux à jour vers la dernière version.</string>
+    <string name="error_display_unavailable">Le Mac n’a pas pu démarrer l’écran.</string>
+    <string name="error_rejected">Le Mac a refusé la connexion.</string>
+    <string name="error_replaced">Cet appareil s’est reconnecté depuis une autre session.</string>
+    <string name="error_network">Impossible de joindre le Mac (%1$s).</string>
+    <string name="error_generic">Une erreur s’est produite\u00A0: %1$s</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Paramètres</string>
+    <string name="settings_display">Affichage</string>
+    <string name="settings_show_stats">Afficher les statistiques</string>
+    <string name="settings_show_stats_summary">Fréquence d’images, latence et débit par-dessus l’image</string>
+    <string name="settings_menu_button">Afficher le bouton de menu</string>
+    <string name="settings_menu_button_summary">Un petit bouton sur le bord droit. Un appui avec trois doigts ouvre aussi le menu.</string>
+    <string name="settings_input">Tactile et clavier</string>
+    <string name="settings_one_finger_scroll">Défilement à un doigt</string>
+    <string name="settings_one_finger_scroll_summary">Comme un écran tactile. Si désactivé, un doigt fait glisser et deux doigts font défiler.</string>
+    <string name="settings_swap_ctrl_cmd">Utiliser Ctrl comme ⌘ Commande</string>
+    <string name="settings_swap_ctrl_cmd_summary">Pour les claviers de PC\u00A0: Ctrl+C copie sur le Mac</string>
+    <string name="settings_connection">Connexion</string>
+    <string name="settings_auto_usb">Connexion automatique via USB</string>
+    <string name="settings_auto_usb_summary">Démarrer l’écran dès que le câble est branché</string>
+    <string name="settings_forget">Oublier les Mac associés</string>
+    <string name="settings_forget_summary">Les connexions Wi-Fi demanderont un nouveau code d’association</string>
+    <string name="settings_forget_done">Mac associés oubliés</string>
+    <string name="settings_general">Général</string>
+    <string name="settings_language">Langue</string>
+    <string name="settings_language_system">Langue du système</string>
+    <string name="settings_version">Version</string>
+    <plurals name="pairing_retry">
+        <item quantity="one">Code incorrect. Il vous reste %1$d tentative.</item>
+        <item quantity="many">Code incorrect. Il vous reste %1$d de tentatives.</item>
+        <item quantity="other">Code incorrect. Il vous reste %1$d tentatives.</item>
+    </plurals>
+</resources>

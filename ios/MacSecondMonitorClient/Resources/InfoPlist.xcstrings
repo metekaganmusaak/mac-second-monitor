@@ -4,16 +4,76 @@
     "NSLocalNetworkUsageDescription" : {
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يعثر Mac Second Monitor على أجهزة Mac في شبكتك المحلية ويعرض شاشاتها الإضافية على هذا الجهاز."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac Second Monitor findet Macs in deinem lokalen Netzwerk und zeigt deren zusätzlichen Bildschirm auf diesem Gerät an."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mac Second Monitor finds Macs on your local network and shows their extra display on this device."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac Second Monitor busca ordenadores Mac en tu red local y muestra su pantalla adicional en este dispositivo."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac Second Monitor recherche les Mac sur votre réseau local et affiche leur écran supplémentaire sur cet appareil."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac Second Monitor trova i Mac sulla tua rete locale e mostra il loro schermo aggiuntivo su questo dispositivo."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac Second Monitorはローカルネットワーク上のMacを探し、その追加ディスプレイをこのデバイスに表示します。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac Second Monitor는 로컬 네트워크에서 Mac을 찾아 해당 Mac의 추가 디스플레이를 이 기기에 표시합니다."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O Mac Second Monitor encontra Macs na sua rede local e mostra a tela adicional deles neste dispositivo."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac Second Monitor находит компьютеры Mac в локальной сети и показывает их дополнительный дисплей на этом устройстве."
+          }
+        },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mac Second Monitor, yerel ağınızdaki Mac'leri bulur ve onların ek ekranını bu cihazda gösterir."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac Second Monitor 会查找本地网络中的 Mac，并在此设备上显示它们的扩展显示器。"
           }
         }
       }

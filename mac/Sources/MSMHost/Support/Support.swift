@@ -66,8 +66,8 @@ public enum L10n {
         return bundle.localizedString(forKey: key, value: nil, table: nil)
     }
 
-    /// Languages with translations, in catalog order.
-    public static let supportedLanguages = ["en", "tr"]
+    /// Languages translated in the catalog; English (the source language) first.
+    public static let supportedLanguages = ["en", "tr", "de", "es", "fr", "it", "pt-BR", "ru", "zh-Hans", "ja", "ko", "ar"]
 
     /// `swift build` copies the String Catalog without compiling it (Xcode compiles it into
     /// .lproj tables). In that case the catalog is read directly for the preferred language.

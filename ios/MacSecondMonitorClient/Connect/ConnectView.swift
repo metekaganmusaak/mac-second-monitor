@@ -209,7 +209,8 @@ private struct HostRow: View {
                 }
             }
             Spacer()
-            Image(systemName: "chevron.right")
+            // `forward` points left in right-to-left languages.
+            Image(systemName: "chevron.forward")
                 .font(.footnote.weight(.semibold))
                 .foregroundStyle(.tertiary)
         }

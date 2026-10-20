@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Connect screen -->
+    <string name="connect_subtitle">Используйте это устройство как дисплей для своего Mac.</string>
+    <string name="connect_settings">Настройки</string>
+    <string name="connect_usb_title">USB-кабель</string>
+    <string name="connect_usb_searching">Поиск Mac через USB…</string>
+    <string name="connect_usb_ready">Mac найден через USB. Минимальная задержка.</string>
+    <string name="connect_usb_absent">Подключите кабель и откройте Mac Second Monitor на Mac.</string>
+    <string name="connect_usb_help">Как настроить USB</string>
+    <string name="connect_usb_help_body">1. На этом устройстве откройте Настройки → О планшете (или О телефоне) и семь раз нажмите «Номер сборки», чтобы включить режим «Для разработчиков».\n2. В разделе Настройки → Система → Для разработчиков включите параметр «Отладка по USB» (на устройствах HUAWEI также «Разрешить отладку по ADB только при зарядке»).\n3. Подключите кабель к Mac и разрешите отладку по USB, когда появится запрос.\n4. Откройте Mac Second Monitor на Mac. Это приложение запустится и подключится само.</string>
+    <string name="connect_button">Подключить</string>
+    <string name="connect_network_title">В этой сети</string>
+    <string name="connect_network_searching">Поиск компьютеров Mac в этой сети Wi-Fi…</string>
+    <string name="connect_recent_title">Недавние</string>
+    <string name="connect_manual_title">Подключение по адресу</string>
+    <string name="connect_manual_hint">IP-адрес Mac</string>
+    <string name="connect_manual_invalid">Введите IP-адрес или имя хоста.</string>
+    <string name="connect_host_detail">%1$s · порт %2$d</string>
+
+    <!-- Stream -->
+    <string name="stream_connecting">Подключение к %1$s…</string>
+    <string name="stream_starting">Запуск дисплея…</string>
+    <string name="stream_reconnecting">Соединение потеряно. Повторное подключение…</string>
+    <string name="stream_disconnected">Отключено</string>
+    <!-- Used inside stream_connecting ("Подключение к вашему Mac…"), hence the dative. -->
+    <string name="stream_mac">вашему Mac</string>
+    <string name="stream_usb">USB</string>
+    <string name="stream_wifi">Wi-Fi</string>
+    <string name="stream_retry">Повторить</string>
+    <string name="stream_back">Назад</string>
+    <string name="stream_menu">Меню</string>
+    <string name="stream_menu_keyboard">Клавиатура</string>
+    <string name="stream_menu_stats">Показать статистику</string>
+    <string name="stream_menu_disconnect">Отключиться</string>
+    <string name="stream_exit_title">Отключиться от Mac?</string>
+    <string name="stream_exit_message">Дополнительный дисплей исчезнет с вашего Mac.</string>
+    <string name="stream_stats">%1$.0f кадр/с · %2$s · RTT %3$s · %4$.1f Мбит/с · %5$s</string>
+    <string name="stream_stats_latency">%1$.0f мс</string>
+    <string name="stream_stats_unknown">–</string>
+
+    <!-- Pairing -->
+    <string name="pairing_title">Сопряжение с %1$s</string>
+    <string name="pairing_message">Введите 6-значный код, показанный на вашем Mac.</string>
+    <string name="pairing_button">Подключить</string>
+    <string name="pairing_cancel">Отмена</string>
+
+    <!-- Errors from the host -->
+    <string name="error_permission_missing">Для Mac требуется разрешение на запись экрана. На Mac разрешите доступ для Mac Second Monitor в разделе Системные настройки → Конфиденциальность и безопасность → Запись экрана, затем повторите попытку.</string>
+    <string name="error_pairing_failed">Неверный код сопряжения. Повторите попытку, чтобы получить новый код.</string>
+    <string name="error_pairing_timeout">Время ожидания сопряжения истекло. Повторите попытку, чтобы получить новый код.</string>
+    <string name="error_unsupported_protocol">Это приложение несовместимо с приложением на Mac. Обновите оба до последней версии.</string>
+    <string name="error_display_unavailable">Не удалось запустить дисплей на Mac.</string>
+    <string name="error_rejected">Mac отклонил подключение.</string>
+    <string name="error_replaced">Это устройство повторно подключилось из другого сеанса.</string>
+    <string name="error_network">Не удалось связаться с Mac (%1$s).</string>
+    <string name="error_generic">Что-то пошло не так: %1$s</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Настройки</string>
+    <string name="settings_display">Дисплей</string>
+    <string name="settings_show_stats">Показывать статистику</string>
+    <string name="settings_show_stats_summary">Частота кадров, задержка и битрейт поверх изображения</string>
+    <string name="settings_menu_button">Показывать кнопку меню</string>
+    <string name="settings_menu_button_summary">Небольшая кнопка у правого края. Меню также открывается касанием тремя пальцами.</string>
+    <string name="settings_input">Сенсор и клавиатура</string>
+    <string name="settings_one_finger_scroll">Прокрутка одним пальцем</string>
+    <string name="settings_one_finger_scroll_summary">Как на сенсорном экране. Если выключено, один палец перетаскивает, а два — прокручивают.</string>
+    <string name="settings_swap_ctrl_cmd">Использовать Ctrl как ⌘ Command</string>
+    <string name="settings_swap_ctrl_cmd_summary">Для клавиатур ПК: Ctrl+C копирует на Mac</string>
+    <string name="settings_connection">Подключение</string>
+    <string name="settings_auto_usb">Автоподключение по USB</string>
+    <string name="settings_auto_usb_summary">Запускать дисплей сразу после подключения кабеля</string>
+    <string name="settings_forget">Забыть сопряженные Mac</string>
+    <string name="settings_forget_summary">Для подключения по Wi-Fi потребуется новый код сопряжения</string>
+    <string name="settings_forget_done">Сопряжения с Mac удалены</string>
+    <string name="settings_general">Общие</string>
+    <string name="settings_language">Язык</string>
+    <string name="settings_language_system">Язык системы</string>
+    <string name="settings_version">Версия</string>
+    <plurals name="pairing_retry">
+        <item quantity="one">Неверный код. Осталась %1$d попытка.</item>
+        <item quantity="few">Неверный код. Осталось %1$d попытки.</item>
+        <item quantity="many">Неверный код. Осталось %1$d попыток.</item>
+        <item quantity="other">Неверный код. Осталось %1$d попытки.</item>
+    </plurals>
+</resources>

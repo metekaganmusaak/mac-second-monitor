@@ -15,7 +15,7 @@ from any directory. On a client, open `http://<mac-ip>:7101/`.
 | Query parameter | Effect |
 | --- | --- |
 | `?host=IP:PORT` | Connect to another host than the page's origin (e.g. while running `vite dev`) |
-| `?lang=en` / `?lang=tr` | Override the browser language (remembered; `?lang=auto` clears it) |
+| `?lang=de`, `?lang=pt-BR`, … | Override the browser language (remembered; `?lang=auto` clears it) |
 | `?decoder=mse` / `?decoder=webcodecs` | Force a decode path (testing) |
 | `?stats=1` | Show the statistics overlay |
 
@@ -86,5 +86,9 @@ Screen Wake Lock also needs a secure context; over plain HTTP the device may dim
 
 ## Localization
 
-Strings live in `src/i18n/en.json` and `src/i18n/tr.json` (dot-separated English keys). Adding a
-language means adding a catalog and registering it in `src/i18n.ts`.
+Strings live in `src/i18n/<tag>.json` (dot-separated English keys): `en`, `tr`, `de`, `es`, `fr`, `it`,
+`pt-BR`, `ru`, `zh-CN`, `ja`, `ko`, `ar`. Other regions fall back to the catalog of their base language
+(`de-AT` → `de`, `pt-PT` → `pt-BR`, `zh-TW` → `zh-CN`). Plural keys (`key.one`, `key.few`, …) need exactly the
+categories `Intl.PluralRules` reports for the language. Arabic sets `dir="rtl"`: the UI chrome mirrors, the
+video stage stays left-to-right. Adding a language means adding a catalog and registering it in `src/i18n.ts`;
+`tests/i18n.test.ts` checks keys, placeholders and plural forms of every catalog.

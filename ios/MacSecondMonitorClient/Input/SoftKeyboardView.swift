@@ -105,14 +105,21 @@ final class SoftKeyboardView: UIView, UIKeyInput {
             self?.resignFirstResponder()
         })
         dismiss.accessibilityLabel = String(localized: "stream.keyboard.hide")
-        bar.items = [
-            keyItem("escape", String(localized: "keyboard.escape"), HIDUsage.escape),
-            keyItem("arrow.right.to.line", String(localized: "keyboard.tab"), HIDUsage.tab),
-            .flexibleSpace(),
+        var arrows = [
             keyItem("arrow.left", String(localized: "keyboard.left"), HIDUsage.leftArrow),
             keyItem("arrow.up", String(localized: "keyboard.up"), HIDUsage.upArrow),
             keyItem("arrow.down", String(localized: "keyboard.down"), HIDUsage.downArrow),
             keyItem("arrow.right", String(localized: "keyboard.right"), HIDUsage.rightArrow),
+        ]
+        // The toolbar mirrors its items in right-to-left languages; the arrow keys keep their physical order.
+        if UIView.userInterfaceLayoutDirection(for: bar.semanticContentAttribute) == .rightToLeft {
+            arrows.reverse()
+        }
+        bar.items = [
+            keyItem("escape", String(localized: "keyboard.escape"), HIDUsage.escape),
+            keyItem("arrow.right.to.line", String(localized: "keyboard.tab"), HIDUsage.tab),
+            .flexibleSpace(),
+        ] + arrows + [
             .flexibleSpace(),
             dismiss,
         ]

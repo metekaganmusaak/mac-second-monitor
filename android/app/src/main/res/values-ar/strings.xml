@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Paths use ← because the text reads right to left. \u200F (RLM) keeps lines that begin
+         with Latin text or a placeholder right-aligned; \u2068…\u2069 (FSI…PDI) isolate host names
+         and error details so their brackets and punctuation stay in place. -->
+
+    <!-- Connect screen -->
+    <string name="connect_subtitle">استخدِم هذا الجهاز كشاشة لجهاز Mac.</string>
+    <string name="connect_settings">الإعدادات</string>
+    <string name="connect_usb_title">كابل USB</string>
+    <string name="connect_usb_searching">جارٍ البحث عن جهاز Mac عبر USB…</string>
+    <string name="connect_usb_ready">تم العثور على جهاز Mac عبر USB. أقل وقت استجابة.</string>
+    <string name="connect_usb_absent">وصِّل الكابل وافتح تطبيق Mac Second Monitor على جهاز Mac.</string>
+    <string name="connect_usb_help">طريقة إعداد USB</string>
+    <string name="connect_usb_help_body">1. على هذا الجهاز، افتح الإعدادات ← لمحة عن الجهاز اللوحي (أو لمحة عن الهاتف) وانقر على «رقم الإصدار» سبع مرات لتفعيل خيارات المطورين.\n2. في الإعدادات ← النظام ← خيارات المطورين، فعِّل «تصحيح أخطاء USB» (وعلى أجهزة HUAWEI فعِّل أيضًا «تمكين وضع تصحيح الأخطاء ADB في وضع الشحن فقط»).\n3. وصِّل الكابل بجهاز Mac واسمح بتصحيح أخطاء USB عند مطالبتك بذلك.\n4. افتح تطبيق Mac Second Monitor على جهاز Mac. سيفتح هذا التطبيق ويتصل تلقائيًا.</string>
+    <string name="connect_button">اتصال</string>
+    <string name="connect_network_title">على هذه الشبكة</string>
+    <string name="connect_network_searching">جارٍ البحث عن أجهزة Mac على شبكة Wi-Fi هذه…</string>
+    <string name="connect_recent_title">الأجهزة الأخيرة</string>
+    <string name="connect_manual_title">الاتصال باستخدام العنوان</string>
+    <string name="connect_manual_hint">عنوان IP لجهاز Mac</string>
+    <string name="connect_manual_invalid">أدخِل عنوان IP أو اسم مضيف.</string>
+    <string name="connect_host_detail">\u200F\u2068%1$s\u2069 · المنفذ %2$d</string>
+
+    <!-- Stream -->
+    <string name="stream_connecting">جارٍ الاتصال بـ \u2068%1$s\u2069…</string>
+    <string name="stream_starting">جارٍ تشغيل الشاشة…</string>
+    <string name="stream_reconnecting">انقطع الاتصال. جارٍ إعادة الاتصال…</string>
+    <string name="stream_disconnected">تم قطع الاتصال</string>
+    <string name="stream_mac">Mac</string>
+    <string name="stream_usb">USB</string>
+    <string name="stream_wifi">Wi-Fi</string>
+    <string name="stream_retry">إعادة المحاولة</string>
+    <string name="stream_back">رجوع</string>
+    <string name="stream_menu">القائمة</string>
+    <string name="stream_menu_keyboard">لوحة المفاتيح</string>
+    <string name="stream_menu_stats">عرض الإحصاءات</string>
+    <string name="stream_menu_disconnect">قطع الاتصال</string>
+    <string name="stream_exit_title">هل تريد قطع الاتصال بجهاز Mac؟</string>
+    <string name="stream_exit_message">ستختفي الشاشة الإضافية من جهاز Mac.</string>
+    <!-- Technical overlay; kept left-to-right like the units it shows. -->
+    <string name="stream_stats">%1$.0f fps · %2$s · RTT %3$s · %4$.1f Mbps · %5$s</string>
+    <string name="stream_stats_latency">%1$.0f ms</string>
+    <string name="stream_stats_unknown">–</string>
+
+    <!-- Pairing -->
+    <string name="pairing_title">الإقران مع \u2068%1$s\u2069</string>
+    <string name="pairing_message">أدخِل الرمز المكوَّن من 6 أرقام الظاهر على جهاز Mac.</string>
+    <string name="pairing_button">إقران</string>
+    <string name="pairing_cancel">إلغاء</string>
+
+    <!-- Errors from the host -->
+    <string name="error_permission_missing">يحتاج جهاز Mac إلى إذن تسجيل الشاشة. على جهاز Mac، اسمح لتطبيق Mac Second Monitor من إعدادات النظام ← الخصوصية والأمن ← تسجيل الشاشة، ثم أعِد المحاولة.</string>
+    <string name="error_pairing_failed">رمز الإقران غير صحيح. أعِد المحاولة للحصول على رمز جديد.</string>
+    <string name="error_pairing_timeout">انتهت مهلة الإقران. أعِد المحاولة للحصول على رمز جديد.</string>
+    <string name="error_unsupported_protocol">هذا التطبيق وتطبيق Mac غير متوافقَين. حدِّث كليهما إلى أحدث إصدار.</string>
+    <string name="error_display_unavailable">تعذَّر على جهاز Mac تشغيل الشاشة.</string>
+    <string name="error_rejected">رفض جهاز Mac الاتصال.</string>
+    <string name="error_replaced">اتصل هذا الجهاز مجددًا من جلسة أخرى.</string>
+    <string name="error_network">تعذَّر الوصول إلى جهاز Mac (\u2068%1$s\u2069).</string>
+    <string name="error_generic">حدث خطأ: \u2068%1$s\u2069</string>
+
+    <!-- Settings -->
+    <string name="settings_title">الإعدادات</string>
+    <string name="settings_display">العرض</string>
+    <string name="settings_show_stats">عرض الإحصاءات</string>
+    <string name="settings_show_stats_summary">معدّل الإطارات ووقت الاستجابة ومعدّل البت فوق الصورة</string>
+    <string name="settings_menu_button">إظهار زر القائمة</string>
+    <!-- The handle sits on the end edge, which is the left edge in right-to-left layouts. -->
+    <string name="settings_menu_button_summary">زر صغير على الحافة اليسرى. يؤدي النقر بثلاثة أصابع أيضًا إلى فتح القائمة.</string>
+    <string name="settings_input">اللمس ولوحة المفاتيح</string>
+    <string name="settings_one_finger_scroll">التمرير بإصبع واحد</string>
+    <string name="settings_one_finger_scroll_summary">كما في شاشة اللمس. عند إيقافه، يسحب إصبع واحد ويمرِّر إصبعان.</string>
+    <string name="settings_swap_ctrl_cmd">استخدام Ctrl كمفتاح ⌘ Command</string>
+    <string name="settings_swap_ctrl_cmd_summary">للوحات مفاتيح الكمبيوتر: يؤدي Ctrl+C إلى النسخ على جهاز Mac</string>
+    <string name="settings_connection">الاتصال</string>
+    <string name="settings_auto_usb">الاتصال تلقائيًا عبر USB</string>
+    <string name="settings_auto_usb_summary">تشغيل الشاشة فور توصيل الكابل</string>
+    <string name="settings_forget">حذف أجهزة Mac المقترنة</string>
+    <string name="settings_forget_summary">ستطلب اتصالات Wi-Fi رمز إقران جديدًا</string>
+    <string name="settings_forget_done">تم حذف أجهزة Mac المقترنة</string>
+    <string name="settings_general">عام</string>
+    <string name="settings_language">اللغة</string>
+    <string name="settings_language_system">لغة النظام</string>
+    <string name="settings_version">الإصدار</string>
+    <plurals name="pairing_retry">
+        <item quantity="zero">الرمز غير صحيح. لم تتبقَّ لديك أي محاولات.</item>
+        <item quantity="one">الرمز غير صحيح. تبقّت لديك محاولة واحدة.</item>
+        <item quantity="two">الرمز غير صحيح. تبقّت لديك محاولتان.</item>
+        <item quantity="few">الرمز غير صحيح. تبقّت لديك %1$d محاولات.</item>
+        <item quantity="many">الرمز غير صحيح. تبقّت لديك %1$d محاولة.</item>
+        <item quantity="other">الرمز غير صحيح. تبقّت لديك %1$d محاولة.</item>
+    </plurals>
+</resources>

@@ -15,7 +15,8 @@ It works over **USB** (lowest latency) and **Wi-Fi**, and does not need Google P
 - Stylus (M-Pencil) with pressure and hover, Bluetooth mouse and keyboard (Ctrl ↔ ⌘ swap option)
 - Soft keyboard for typing on the Mac
 - Immersive full screen, highest refresh rate, low-latency Wi-Fi lock, statistics overlay
-- English and Turkish, with a per-app language setting
+- 12 languages (English, Türkçe, Deutsch, Español, Français, Italiano, Português (Brasil),
+  Русский, 简体中文, 日本語, 한국어, العربية) with a per-app language setting; Arabic is mirrored
 
 ## Using it over USB
 

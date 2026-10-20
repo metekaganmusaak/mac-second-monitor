@@ -37,8 +37,8 @@ Rotating the device reconnects so that the Mac recreates the display in the new
 orientation. If the connection drops, the app reconnects with backoff (1, 2, 4, 8 s…), except
 when the Mac ended the session or pairing failed.
 
-Settings: statistics overlay, keep the screen on while streaming, and app language (System,
-English, Türkçe; takes effect after restarting the app).
+Settings: statistics overlay, keep the screen on while streaming, and app language (System or
+one of the 12 bundled languages; takes effect after restarting the app).
 
 ## Building
 
@@ -59,7 +59,9 @@ xcodebuild -project ios/MacSecondMonitorClient.xcodeproj -scheme MacSecondMonito
 
 The project uses Swift 6 language mode. Source files live in folder-synchronized groups, so new
 files in `MacSecondMonitorClient/` are picked up without editing the project. User-facing text
-lives in `Resources/Localizable.xcstrings` (English and Turkish) and `InfoPlist.xcstrings`.
+lives in `Resources/Localizable.xcstrings` and `InfoPlist.xcstrings`: English (source), Turkish,
+German, Spanish, French, Italian, Brazilian Portuguese, Russian, Simplified Chinese, Japanese,
+Korean and Arabic (right-to-left).
 
 ### Debug launch arguments
 

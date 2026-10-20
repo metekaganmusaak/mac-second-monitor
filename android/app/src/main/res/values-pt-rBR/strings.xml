@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Connect screen -->
+    <string name="connect_subtitle">Use este dispositivo como tela do seu Mac.</string>
+    <string name="connect_settings">Configurações</string>
+    <string name="connect_usb_title">Cabo USB</string>
+    <string name="connect_usb_searching">Procurando seu Mac via USB…</string>
+    <string name="connect_usb_ready">Mac encontrado via USB. Latência mínima.</string>
+    <string name="connect_usb_absent">Conecte o cabo e abra o Mac Second Monitor no Mac.</string>
+    <string name="connect_usb_help">Como configurar o USB</string>
+    <string name="connect_usb_help_body">1. Neste dispositivo, abra Configurações → Sobre o tablet/dispositivo e toque sete vezes em “Número da versão” para ativar as Opções do desenvolvedor.\n2. Em Configurações → Sistema → Opções do desenvolvedor, ative a “Depuração USB” (em dispositivos HUAWEI, ative também “Permitir depuração ADB no modo somente carregamento”).\n3. Conecte o cabo ao Mac e permita a depuração USB quando solicitado.\n4. Abra o Mac Second Monitor no Mac. Este app abre e se conecta sozinho.</string>
+    <string name="connect_button">Conectar</string>
+    <string name="connect_network_title">Nesta rede</string>
+    <string name="connect_network_searching">Procurando Macs nesta rede Wi-Fi…</string>
+    <string name="connect_recent_title">Recentes</string>
+    <string name="connect_manual_title">Conectar por endereço</string>
+    <string name="connect_manual_hint">Endereço IP do Mac</string>
+    <string name="connect_manual_invalid">Digite um endereço IP ou nome de host.</string>
+    <string name="connect_host_detail">%1$s · porta %2$d</string>
+
+    <!-- Stream -->
+    <string name="stream_connecting">Conectando a %1$s…</string>
+    <string name="stream_starting">Iniciando a tela…</string>
+    <string name="stream_reconnecting">Conexão perdida. Reconectando…</string>
+    <string name="stream_disconnected">Desconectado</string>
+    <string name="stream_mac">seu Mac</string>
+    <string name="stream_usb">USB</string>
+    <string name="stream_wifi">Wi-Fi</string>
+    <string name="stream_retry">Tentar de novo</string>
+    <string name="stream_back">Voltar</string>
+    <string name="stream_menu">Menu</string>
+    <string name="stream_menu_keyboard">Teclado</string>
+    <string name="stream_menu_stats">Mostrar estatísticas</string>
+    <string name="stream_menu_disconnect">Desconectar</string>
+    <string name="stream_exit_title">Desconectar do Mac?</string>
+    <string name="stream_exit_message">A tela extra vai desaparecer do seu Mac.</string>
+    <string name="stream_stats">%1$.0f fps · %2$s · RTT %3$s · %4$.1f Mbps · %5$s</string>
+    <string name="stream_stats_latency">%1$.0f ms</string>
+    <string name="stream_stats_unknown">–</string>
+
+    <!-- Pairing -->
+    <string name="pairing_title">Parear com %1$s</string>
+    <string name="pairing_message">Digite o código de 6 dígitos mostrado no seu Mac.</string>
+    <string name="pairing_button">Parear</string>
+    <string name="pairing_cancel">Cancelar</string>
+
+    <!-- Errors from the host -->
+    <string name="error_permission_missing">O Mac precisa da permissão de Gravação de Tela. No Mac, permita o Mac Second Monitor em Ajustes do Sistema → Privacidade e Segurança → Gravação de Tela e tente de novo.</string>
+    <string name="error_pairing_failed">O código de pareamento estava errado. Tente de novo para receber um novo código.</string>
+    <string name="error_pairing_timeout">O tempo para parear acabou. Tente de novo para receber um novo código.</string>
+    <string name="error_unsupported_protocol">Este app e o app do Mac não são compatíveis. Atualize os dois para a versão mais recente.</string>
+    <string name="error_display_unavailable">O Mac não conseguiu iniciar a tela.</string>
+    <string name="error_rejected">O Mac recusou a conexão.</string>
+    <string name="error_replaced">Este dispositivo se conectou de novo em outra sessão.</string>
+    <string name="error_network">Não foi possível acessar o Mac (%1$s).</string>
+    <string name="error_generic">Algo deu errado: %1$s</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Configurações</string>
+    <string name="settings_display">Tela</string>
+    <string name="settings_show_stats">Mostrar estatísticas</string>
+    <string name="settings_show_stats_summary">Taxa de quadros, latência e taxa de bits sobre a imagem</string>
+    <string name="settings_menu_button">Mostrar botão de menu</string>
+    <string name="settings_menu_button_summary">Um pequeno botão na borda direita. Tocar com três dedos também abre o menu.</string>
+    <string name="settings_input">Toque e teclado</string>
+    <string name="settings_one_finger_scroll">Rolar com um dedo</string>
+    <string name="settings_one_finger_scroll_summary">Como em uma tela touchscreen. Se desativado, um dedo arrasta e dois dedos rolam.</string>
+    <string name="settings_swap_ctrl_cmd">Usar Ctrl como ⌘ Comando</string>
+    <string name="settings_swap_ctrl_cmd_summary">Para teclados de PC: Ctrl+C copia no Mac</string>
+    <string name="settings_connection">Conexão</string>
+    <string name="settings_auto_usb">Conectar automaticamente via USB</string>
+    <string name="settings_auto_usb_summary">Iniciar a tela assim que o cabo for conectado</string>
+    <string name="settings_forget">Esquecer Macs pareados</string>
+    <string name="settings_forget_summary">As conexões por Wi-Fi vão pedir um novo código de pareamento</string>
+    <string name="settings_forget_done">Macs pareados esquecidos</string>
+    <string name="settings_general">Geral</string>
+    <string name="settings_language">Idioma</string>
+    <string name="settings_language_system">Idioma do sistema</string>
+    <string name="settings_version">Versão</string>
+    <plurals name="pairing_retry">
+        <item quantity="one">Código incorreto. Resta %1$d tentativa.</item>
+        <item quantity="many">Código incorreto. Restam %1$d de tentativas.</item>
+        <item quantity="other">Código incorreto. Restam %1$d tentativas.</item>
+    </plurals>
+</resources>

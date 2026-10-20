@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Connect screen -->
+    <string name="connect_subtitle">将此设备用作 Mac 的显示器。</string>
+    <string name="connect_settings">设置</string>
+    <string name="connect_usb_title">USB 数据线</string>
+    <string name="connect_usb_searching">正在通过 USB 查找您的 Mac…</string>
+    <string name="connect_usb_ready">已通过 USB 找到 Mac，延迟最低。</string>
+    <string name="connect_usb_absent">请连接数据线，并在 Mac 上打开 Mac Second Monitor。</string>
+    <string name="connect_usb_help">如何设置 USB 连接</string>
+    <string name="connect_usb_help_body">1. 在此设备上打开“设置”→“关于本机”，连续点按“Build 号”七次以启用开发者选项。\n2. 在“设置”→“系统”→“开发者选项”中开启“USB 调试”（华为设备还需开启“‘仅充电’模式下允许 ADB 调试”）。\n3. 将数据线连接到 Mac，并在出现提示时允许 USB 调试。\n4. 在 Mac 上打开 Mac Second Monitor，此应用会自动打开并连接。</string>
+    <string name="connect_button">连接</string>
+    <string name="connect_network_title">当前网络</string>
+    <string name="connect_network_searching">正在此 Wi-Fi 网络中搜索 Mac…</string>
+    <string name="connect_recent_title">最近连接</string>
+    <string name="connect_manual_title">通过地址连接</string>
+    <string name="connect_manual_hint">Mac 的 IP 地址</string>
+    <string name="connect_manual_invalid">请输入 IP 地址或主机名。</string>
+    <string name="connect_host_detail">%1$s · 端口 %2$d</string>
+
+    <!-- Stream -->
+    <string name="stream_connecting">正在连接到 %1$s…</string>
+    <string name="stream_starting">正在启动显示屏…</string>
+    <string name="stream_reconnecting">连接已断开，正在重新连接…</string>
+    <string name="stream_disconnected">已断开连接</string>
+    <string name="stream_mac">Mac</string>
+    <string name="stream_usb">USB</string>
+    <string name="stream_wifi">Wi-Fi</string>
+    <string name="stream_retry">重试</string>
+    <string name="stream_back">返回</string>
+    <string name="stream_menu">菜单</string>
+    <string name="stream_menu_keyboard">键盘</string>
+    <string name="stream_menu_stats">显示统计信息</string>
+    <string name="stream_menu_disconnect">断开连接</string>
+    <string name="stream_exit_title">要断开与 Mac 的连接吗？</string>
+    <string name="stream_exit_message">这块额外的显示屏将从您的 Mac 上消失。</string>
+    <string name="stream_stats">%1$.0f fps · %2$s · RTT %3$s · %4$.1f Mbps · %5$s</string>
+    <string name="stream_stats_latency">%1$.0f ms</string>
+    <string name="stream_stats_unknown">–</string>
+
+    <!-- Pairing -->
+    <string name="pairing_title">与 %1$s 配对</string>
+    <string name="pairing_message">请输入您的 Mac 上显示的 6 位数代码。</string>
+    <string name="pairing_button">配对</string>
+    <string name="pairing_cancel">取消</string>
+
+    <!-- Errors from the host -->
+    <string name="error_permission_missing">Mac 需要“屏幕录制”权限。请在 Mac 上前往“系统设置”→“隐私与安全性”→“屏幕录制”，允许 Mac Second Monitor，然后重试。</string>
+    <string name="error_pairing_failed">配对码错误。请重试以获取新的配对码。</string>
+    <string name="error_pairing_timeout">配对超时。请重试以获取新的配对码。</string>
+    <string name="error_unsupported_protocol">此应用与 Mac 应用不兼容。请将两者都更新到最新版本。</string>
+    <string name="error_display_unavailable">Mac 无法启动显示屏。</string>
+    <string name="error_rejected">Mac 拒绝了连接。</string>
+    <string name="error_replaced">此设备已从另一个会话重新连接。</string>
+    <string name="error_network">无法连接到 Mac（%1$s）。</string>
+    <string name="error_generic">出现问题：%1$s</string>
+
+    <!-- Settings -->
+    <string name="settings_title">设置</string>
+    <string name="settings_display">显示</string>
+    <string name="settings_show_stats">显示统计信息</string>
+    <string name="settings_show_stats_summary">在画面上方显示帧率、延迟和码率</string>
+    <string name="settings_menu_button">显示菜单按钮</string>
+    <string name="settings_menu_button_summary">右侧边缘的小按钮。三指点按也可打开菜单。</string>
+    <string name="settings_input">触控和键盘</string>
+    <string name="settings_one_finger_scroll">单指滚动</string>
+    <string name="settings_one_finger_scroll_summary">与触摸屏操作相同。关闭后，单指拖动，双指滚动。</string>
+    <string name="settings_swap_ctrl_cmd">将 Ctrl 用作 ⌘ Command 键</string>
+    <string name="settings_swap_ctrl_cmd_summary">适用于 PC 键盘：按 Ctrl+C 即可在 Mac 上复制</string>
+    <string name="settings_connection">连接</string>
+    <string name="settings_auto_usb">通过 USB 自动连接</string>
+    <string name="settings_auto_usb_summary">连接数据线后立即启动显示屏</string>
+    <string name="settings_forget">清除已配对的 Mac</string>
+    <string name="settings_forget_summary">通过 Wi-Fi 连接时需要输入新的配对码</string>
+    <string name="settings_forget_done">已清除配对的 Mac</string>
+    <string name="settings_general">常规</string>
+    <string name="settings_language">语言</string>
+    <string name="settings_language_system">跟随系统</string>
+    <string name="settings_version">版本</string>
+    <plurals name="pairing_retry">
+        <item quantity="other">代码错误。还剩 %1$d 次机会。</item>
+    </plurals>
+</resources>
